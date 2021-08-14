@@ -1306,8 +1306,11 @@ input, select, textarea {
 	}
 
 	body {
-		background-image: url("images/overlay.png"), url("images/bg.jpg");
-		background-repeat: repeat, no-repeat;
+		background-image: url("images/overlay.png"), url("images/bg.jpg"); background: rgb(2,0,36);
+		background: -moz-radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 7%, rgba(139,139,154,1) 100%, rgba(0,212,255,1) 100%);
+		background: -webkit-radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 7%, rgba(139,139,154,1) 100%, rgba(0,212,255,1) 100%);
+		background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 7%, rgba(139,139,154,1) 100%, rgba(0,212,255,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1); background-repeat: repeat, no-repeat;
 		background-size: auto, 100% 100%;
 		background-attachment: fixed;
 		overflow-y: scroll;
@@ -2171,7 +2174,7 @@ input, select, textarea {
 				display: inline-block;
 				padding-left: 1em;
 				margin-left: 1em;
-				border-left: solid 1px rgba(255, 255, 255, 0.25);
+				border-left: solid 1px rgba(255, 255, 255, 0.315);
 				line-height: 1;
 			}
 

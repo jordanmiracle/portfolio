@@ -73,15 +73,33 @@ TEMPLATES = [
 WSGI_APPLICATION = 'portfolioproject.wsgi.application'
 
 
+
+FIXTURES = [
+    os.path.join(BASE_DIR, "fixtures")
+    ]
+
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'USER': 'portfoliouser',
+        'NAME': 'portfoliodatabase',
+        'HOST': 'localhost',
+        'PASSWORD': 'Likeacarrot23!',
+        'PORT': '5432',
+    },
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
