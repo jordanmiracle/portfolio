@@ -4,4 +4,4 @@ from .models import Project
 
 def index(request):
     projects = Project.objects.all()
-    return render(request, index, {})
+    return render(request, 'portfolioapp/index.html',{})
