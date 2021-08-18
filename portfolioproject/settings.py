@@ -12,11 +12,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-
+import psycopg2 as db
+from psycopg2 import connect
+import django_heroku
+from django.contrib import staticfiles, postgres
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -29,7 +31,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'thejordanmiracle.com', 'thejordanmiracle.herokuapp.com']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolioapp',
+    'frontend',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'portfolioproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend/build/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,34 +74,33 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolioproject.wsgi.application'
 
-
-
 FIXTURES = [
     os.path.join(BASE_DIR, "fixtures")
-    ]
-
+]
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'USER': 'portfoliouser',
+#        'NAME': 'portfoliodatabase',
+#        'HOST': 'localhost',
+#        'PASSWORD': 'Likeacarrot23!',
+#        'PORT': '5432',
+#    },
+#}
+
+# DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'portfoliouser',
-        'NAME': 'portfoliodatabase',
-        'HOST': 'localhost',
-        'PASSWORD': 'Likeacarrot23!',
-        'PORT': '5432',
-    },
-}
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
+     }
+ }
 
 
 # Password validation
@@ -120,7 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -134,14 +134,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'frontend/build/static')
 ]
 
 STATICFILES = [
@@ -151,10 +150,7 @@ STATICFILES = [
 MEDIA_ROOT = BASE_DIR / 'static/img'
 MEDIA_URL = '/img/'
 
-
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-
+STATIC_ROOT = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
