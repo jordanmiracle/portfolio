@@ -7,7 +7,7 @@ class Project(models.Model):
     description = models.CharField(max_length=240)
     url = models.URLField(blank=True)
     code_url = models.URLField(blank=True)
-    image = models.ImageField(upload_to='portfolioapp/images', default=None)
+    image = models.ImageField(null=False, blank=False, upload_to='static/portfolioapp/images')
 
     def __str__(self):
         return self.title
