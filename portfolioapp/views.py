@@ -9,8 +9,8 @@ def index(request):
     return render(request, 'portfolioapp/index.html', {'projects': projects})
 
 
-def project_detail(request):
-    project = Project.objects.get(id=1)
+def project_detail(request, pk):
+    project = Project.objects.get(id=pk)
     context = {
         'project': project
     }
