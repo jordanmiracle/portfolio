@@ -1,0 +1,57 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$gsl8uPeseQwVbCHFD3mMxE$rSM88nNJMPaputm6wWA2MfswHwZUhwriJjMIx4oT9xo=",
+        "last_login": "2021-08-14T11:06:34.260Z",
+        "is_superuser": true,
+        "username": "jordanmiracle",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joinprojectsed": "2021-08-14T11:06:28.772Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "h6tgcn9dgvjwnoimynxn6boq2g839oae",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSHTAgN16d5vIDxmpGogKe3K-O_apAvd3nPOfQkftrX4rdPi5yzOYhCn3y2G9KC6g3wP9dZkanVd5ih3RR60y2vL9Lwc7t9BCb18a9KsEZENmGwjKIOj1S6RY0iTchBQMafMQNFFHBHJRjNYUggBeMri_QHaQTfk:1mErUo:qClFMqSv9gHvDy3FXWVbLoHt_6pFy-Tz0dW-foD30VI",
+        "expire_date": "2021-08-28T11:06:34.268Z"
+    }
+},
+{
+    "model": "portfolioapp.project",
+    "pk": 1,
+    "fields": {
+        "title": "PNW Tree & Landscaping",
+        "description": "A website and gallery built for a company in Whatcom County, WA. Tech includes: Django, python, html5, css3, postgresql, and javascript.",
+        "url": "http://pnwtreescapes.com",
+        "code_url": "https://github.com/jordanmiracle/PNW",
+        "image": "None/climber-on-line.JPG"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2021-08-14T11:08:48.428Z",
+        "user": [
+            "jordanmiracle"
+        ],
+        "content_type": [
+            "portfolioapp",
+            "project"
+        ],
+        "object_id": "1",
+        "object_repr": "PNW Tree & Landscaping",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}
+]
