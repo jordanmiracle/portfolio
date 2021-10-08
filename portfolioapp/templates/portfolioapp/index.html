@@ -1,178 +1,181 @@
 {% load static %}
 <!DOCTYPE HTML>
-{% block content %}
-    <html lang="en">
-    <head>
-        <title>Jordan Miracle</title>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-        <link rel="stylesheet" href="{% static 'portfolioapp/css/main.css' %}"/>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-              integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-              crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
-                integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
-                crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-                crossorigin="anonymous"></script>
+<html lang="en">
+<head>
+    <title>Jordan Miracle</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="{% static 'portfolioapp/css/main.css' %}"/>
 
-        <noscript>
-            <link rel="stylesheet" href="{% static 'portfolioapp/css/noscript.css' %}"/>
-        </noscript>
-        <style>
-            body {
-                padding-top: 20px;
-            }
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
 
-            .card-deck {
-                margin: 0 -15px;
-                justify-content: space-between;
-            }
+    <noscript>
+        <link rel="stylesheet" href="{% static 'portfolioapp/css/noscript.css' %}"/>
+    </noscript>
+    <script>
+        $(window).load(function () {
+            $('.post-module').hover(function () {
+                $(this).find('.description').stop().animate({
+                    height: "toggle",
+                    opacity: "toggle"
+                }, 300);
+            });
+        });
+    </script>
+    <style>
 
-            .card-deck .card {
-                margin: 0 0 1rem;
-            }
+    </style>
 
-            @media (min-width: 576px) and (max-width: 767.98px) {
-                .card-deck .card {
-                    -ms-flex: 0 0 48.7%;
-                    flex: 0 0 48.7%;
-                }
-            }
+</head>
+<body class="is-preload">
+<script>
 
-            @media (min-width: 768px) and (max-width: 991.98px) {
-                .card-deck .card {
-                    -ms-flex: 0 0 32%;
-                    flex: 0 0 32%;
-                }
-            }
+</script>
+<!-- Wrapper-->
+<div id="wrapper">
 
-            @media (min-width: 992px) {
-                .card-deck .card {
-                    -ms-flex: 0 0 24%;
-                    flex: 0 0 24%;
-                }
-            }
+    <!-- Nav -->
+    <nav id="nav">
+        <a href="#" class="icon solid fa-home"><span>Home</span></a>
+        <a href="#about" class="icon solid fa-male"><span>About</span></a>
+        <a href="#projects" class="icon solid fa-folder"><span>Projects</span></a>
+        <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
+        <a href="https://github.com/jordanmiracle" class="icon brands fa-github"><span>Github</span></a>
+    </nav>
 
-        </style>
-    </head>
-    <body class="is-preload">
+    <!-- Main -->
+    <div id="main">
 
-    <!-- Wrapper-->
-    <div id="wrapper">
+        <!-- Me -->
+        <article id="home" class="panel intro">
+            <header>
+                <h1>Jordan Miracle</h1>
+                <p>I can't think of anything catchy right now.</p>
+            </header>
+            <a href="#projects" class="jumplink pic">
+                <span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+                <img src="{% static 'portfolioapp/images/me-and-kai(smudged).webp' %}" alt=""/>
+            </a>
+        </article>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <a href="#" class="icon solid fa-home"><span>Home</span></a>
-            <a href="#about" class="icon solid fa-male"><span>About</span></a>
-            <a href="#projects" class="icon solid fa-folder"><span>Projects</span></a>
-            <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-            <a href="https://github.com/jordanmiracle" class="icon brands fa-github"><span>Github</span></a>
-        </nav>
+        <!-- About -->
 
-        <!-- Main -->
-        <div id="main">
-
-            <!-- Me -->
-            <article id="home" class="panel intro">
-                <header>
-                    <h1>Jordan Miracle</h1>
-                    <p>Meaningful development for the world</p>
-                </header>
-                <a href="#projects" class="jumplink pic">
-                    <span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-                    <img src="{% static 'portfolioapp/images/me-and-kai(smudged).webp' %}" alt=""/>
-                </a>
-            </article>
-
-            <!-- About -->
-
-            <article id="about" class="panel">
-                <header>
-                    <h4>Some things about me</h4>
-                    <p>
-                        I'm not great at talking about myself.
-                    </p>
-                </header>
-            </article>
-
-            <!-- Work -->
-            <article id="projects" class="panel">
-                <header>
-                    <h2>Projects</h2>
-                </header>
+        <article id="about" class="panel">
+            <header>
+                <h4>Some things about me</h4>
                 <p>
-                    These are projects that are either completed or, for some of the bigger ones, are currently being
-                    developed.
-                    Everything from websites for companies and organizations, to small data mining and language
+                    I'm not great at talking about myself.
                 </p>
-                <section>
-                    <div class="row>">
-                        <div class="card-deck">
+            </header>
+        </article>
+
+        <!-- Work -->
+        <article id="projects" class="panel">
+            <header>
+                <h2>Projects</h2>
+            </header>
+            <p>
+                These are projects that are either completed or, for some of the bigger ones, are currently being
+                developed.
+                Everything from websites for companies and organizations, to small data mining and language
+            </p>
+            <section>
+
+                <div class="container">
+                    <div class="info">
+                        <!-- Normal Demo-->
+                        <div class="column">
                             {% for project in projects %}
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ project.image }}" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ project.title }}</h5>
-                                        <p class="card-text">{{ project.title }}</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
-                                        </p>
+
+                                <div class="demo-title"></div>
+                                <!-- Post-->
+
+                                <div class="post-module">
+                                    <!-- Thumbnail-->
+                                    <div class="thumbnail">
+                                        <div class="date">
+                                            <div class="day">27</div>
+                                            <div class="month">Mar</div>
+                                        </div>
+                                        <img src="{{ project.image }}" alt="An image accompanying the project. "/>
+                                    </div>
+                                    <!-- Post Content-->
+                                    <div class="post-content">
+                                        <div class="category">Photos</div>
+                                        <h1 class="title">{{ project.title }}</h1>
+                                        <h2 class="sub_title">The city that never sleeps.</h2>
+                                        <p class="description">New York, the largest city in the U.S., is an
+                                            architectural
+                                            marvel with plenty of historic monuments, magnificent buildings and
+                                            countless
+                                            dazzling skyscrapers.</p>
+                                        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-"></i> 6 mins ago</span><span
+                                                class="comments"><i class="fa fa-comments"></i><a
+                                                href="#"> 39 comments</a></span></div>
                                     </div>
                                 </div>
                             {% endfor %}
                         </div>
                     </div>
-                </section>
-            </article>
+                </div>
 
-            <!-- Contact -->
-            <article id="contact" class="panel">
-                <header>
-                    <h2>I'm available to contact, work with, or hire.</h2>
-                </header>
-                <form action="#" method="post">
-                    <div>
-                        <div class="row">
-                            <div class="col-6 col-12-medium">
+            </section>
+        </article>
+
+
+        <!-- Contact -->
+        <article id="contact" class="panel">
+            <header>
+                <h2>I'm available to contact, work with, or hire.</h2>
+            </header>
+            <form action="#" method="post">
+                <div>
+                    <div class="row">
+                        <div class="col-6 col-12-medium">
+                            <label>
                                 <input type="text" name="name" placeholder="Name"/>
-                            </div>
-                            <div class="col-6 col-12-medium">
+                            </label>
+                        </div>
+                        <div class="col-6 col-12-medium">
+                            <label>
                                 <input type="text" name="email" placeholder="Email"/>
-                            </div>
-                            <div class="col-12">
+                            </label>
+                        </div>
+                        <div class="col-12">
+                            <label>
                                 <input type="text" name="subject" placeholder="Subject"/>
-                            </div>
-                            <div class="col-12">
+                            </label>
+                        </div>
+                        <div class="col-12">
+                            <label>
                                 <textarea name="message" placeholder="Message" rows="6"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <input type="submit" value="Send Message"/>
-                            </div>
+                            </label>
+                        </div>
+                        <div class="col-12">
+                            <input type="submit" value="Send Message"/>
                         </div>
                     </div>
-                </form>
-            </article>
+                </div>
+            </form>
+        </article>
 
-        </div>
+    </div>
 
-        <!-- Footer -->
-        <div id="footer">
-            <ul class="copyright">
-                <li>&copy; Miracle 2021</li>
-            </ul>
-        </div>
+    <!-- Footer -->
+    <div id="footer">
+        <ul class="copyright">
+            <li>&copy; Miracle 2021</li>
+        </ul>
+    </div>
 
 
-        <!-- Scripts -->
-        <script src="{% static 'portfolioapp/js/jquery.min.js' %}"></script>
-        <script src="{% static 'portfolioapp/js/browser.min.js' %}"></script>
-        <script src="{% static 'portfolioapp/js/breakpoints.min.js' %}"></script>
-        <script src="{% static 'portfolioapp/js/util.js' %}"></script>
-        <script src="{% static 'portfolioapp/js/main.js' %}"></script>
+    <!-- Scripts -->
+    <script src="{% static 'portfolioapp/js/jquery.min.js' %}"></script>
+    <script src="{% static 'portfolioapp/js/browser.min.js' %}"></script>
+    <script src="{% static 'portfolioapp/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'portfolioapp/js/util.js' %}"></script>
+    <script src="{% static 'portfolioapp/js/main.js' %}"></script>
 
-    </body>
-    </html>
+</body>
+</html>
 
-{% endblock %}
