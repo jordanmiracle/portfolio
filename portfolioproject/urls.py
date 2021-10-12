@@ -22,8 +22,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 vue_urls = [
-  path('', lambda request: HttpResponse(render(request, 'portfolioapp/vue_index.html'))),
-  path('', lambda request: HttpResponse(render(request, 'portfolioapp/vue_index.html'))),
+    path('', lambda request: HttpResponse(render(request, 'portfolioapp/vue_index.html'))),
+    path('', lambda request: HttpResponse(render(request, 'portfolioapp/vue_index.html'))),
 ]
 
 urlpatterns = [
@@ -31,5 +31,4 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('', include(vue_urls)),
     path('<int:pk>/', views.project_detail, name='project_detail')
-]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

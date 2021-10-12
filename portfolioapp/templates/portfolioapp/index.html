@@ -12,14 +12,7 @@
         <link rel="stylesheet" href="{% static 'portfolioapp/css/noscript.css' %}"/>
     </noscript>
     <script>
-        let old = $('.card').get(0);
-        $('.card').click(function () {
-            if (old != null && $(old).hasClass('open'))
-                $(old).toggleClass('open');
-            $(this).toggleClass('open');
-            old = this;
 
-        });
     </script>
     <style>
 
@@ -76,7 +69,6 @@
         }
 
         .front:after {
-            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -85,7 +77,8 @@
             display: block;
             border-radius: 6px;
             backface-visibility: hidden;
-            background: linear-gradient(40deg, rgba(67, 138, 243, 0.7), rgba(255, 242, 166, 0.7));
+            background-image: url("{{ project.image }}");
+
         }
 
         .front .inner {
@@ -328,7 +321,7 @@
                                 <div class="front"
                                      style="background-image: url({{ project.image }})">
                                     <div class="inner">
-                                        <h2>Cozy apartment</h2>
+                                        <h2>{{ project.title }}</h2>
                                         <div class="rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -394,7 +387,7 @@
                     {% endfor %}
 
                     <div class="card">
-                        <input type="checkbox" id="card2" class="more">
+                        <label for="card2"></label><input type="checkbox" id="card2" class="more">
                     </div>
 
                 </div>
@@ -446,15 +439,14 @@
             <li>&copy; Miracle 2021</li>
         </ul>
     </div>
+</div>
 
-
-    <!-- Scripts -->
-    <script src="{% static 'portfolioapp/js/jquery.min.js' %}"></script>
-    <script src="{% static 'portfolioapp/js/browser.min.js' %}"></script>
-    <script src="{% static 'portfolioapp/js/breakpoints.min.js' %}"></script>
-    <script src="{% static 'portfolioapp/js/util.js' %}"></script>
-    <script src="{% static 'portfolioapp/js/main.js' %}"></script>
-
+<!-- Scripts -->
+<script src="{% static 'portfolioapp/js/jquery.min.js' %}"></script>
+<script src="{% static 'portfolioapp/js/browser.min.js' %}"></script>
+<script src="{% static 'portfolioapp/js/breakpoints.min.js' %}"></script>
+<script src="{% static 'portfolioapp/js/util.js' %}"></script>
+<script src="{% static 'portfolioapp/js/main.js' %}"></script>
 </body>
 </html>
 
