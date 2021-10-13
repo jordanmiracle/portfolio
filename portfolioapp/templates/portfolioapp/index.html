@@ -12,7 +12,18 @@
         <link rel="stylesheet" href="{% static 'portfolioapp/css/noscript.css' %}"/>
     </noscript>
     <script>
+        (function () {
+            var tab = document.querySelector('.card');
 
+            document.getElementById('card1').addEventListener('click', function () {
+                tab.classList.add('back');
+            }, false);
+
+            document.getElementById('card1').addEventListener('click', function () {
+                tab.classList.remove('front');
+            }, false);
+
+        })();
     </script>
     <style>
 
@@ -59,7 +70,7 @@
             height: 100%;
             display: grid;
             padding: 1.5em;
-            transform: translateZ(80px) scale(0.94);
+            transform: translateZ(90px) scale(0.75);
         }
 
         .front {
@@ -96,14 +107,6 @@
             text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
         }
 
-        .front .rating {
-            grid-row: 3;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-            display: flex;
-            flex-flow: row nowrap;
-        }
-
         .front .rating i {
             margin: 0 1px;
         }
@@ -116,7 +119,7 @@
 
         .back .inner {
             grid-template-rows: 1fr 2fr 1fr 2fr 14fr 1fr 1fr;
-            grid-template-columns: repeat(4, auto);
+            grid-template-columns: repeat(3, auto);
             grid-column-gap: 0.8em;
             justify-items: center;
         }
@@ -321,14 +324,8 @@
                                 <div class="front"
                                      style="background-image: url({{ project.image }})">
                                     <div class="inner">
-                                        <h2>{{ project.title }}</h2>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
+                                        <h2>{{ project.title}}</h2>
+
                                         <label for="card1" class="button" aria-hidden="true">
                                             Details
                                         </label>
@@ -337,43 +334,11 @@
                                 <div class="back">
                                     <div class="inner">
                                         <div class="info">
-                                            <span>5</span>
-                                            <div class="icon">
-                                                <i class="fas fa-users"></i>
-                                                <span>people</span>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <span>4</span>
-                                            <div class="icon">
-                                                <i class="fas fa-door-open"></i>
-                                                <span>rooms</span>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <span>3</span>
-                                            <div class="icon">
-                                                <i class="fas fa-bed"></i>
-                                                <span>beds</span>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <span>1</span>
-                                            <div class="icon">
-                                                <i class="fas fa-bath"></i>
-                                                <span>bath</span>
-                                            </div>
+
                                         </div>
                                         <div class="description">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
-                                                accusamus.</p>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates
-                                                earum
-                                                nostrum ipsam
-                                                ullam, reiciendis nam consectetur? Doloribus voluptate architecto
-                                                possimus
-                                                perferendis
-                                                tenetur nemo amet temporibus, enim soluta nam, debitis.</p>
+                                            <p>{{ project.description }}</p>
+
                                         </div>
                                         <div class="location">Warsaw, Poland</div>
                                         <div class="price">38€ / day</div>
@@ -386,11 +351,6 @@
                         </div>
                     {% endfor %}
 
-                    <div class="card">
-                        <label for="card2"></label><input type="checkbox" id="card2" class="more">
-                    </div>
-
-                </div>
             </section>
         </article>
 

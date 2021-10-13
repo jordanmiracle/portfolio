@@ -21,14 +21,9 @@ from portfolioapp import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-vue_urls = [
-    path('', lambda request: HttpResponse(render(request, 'portfolioapp/vue_index.html'))),
-    path('', lambda request: HttpResponse(render(request, 'portfolioapp/vue_index.html'))),
-]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('', include(vue_urls)),
-    path('<int:pk>/', views.project_detail, name='project_detail')
+    path('<int:id>/', views.project_detail, name='project_detail')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
