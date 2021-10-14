@@ -15,11 +15,11 @@
         (function () {
             var tab = document.querySelector('.card');
 
-            document.getElementById('card1').addEventListener('click', function () {
+            document.getElementById('{{ project.id }}').addEventListener('click', function () {
                 tab.classList.add('back');
             }, false);
 
-            document.getElementById('card1').addEventListener('click', function () {
+            document.getElementById('{{ project.id }}').addEventListener('click', function () {
                 tab.classList.remove('front');
             }, false);
 
@@ -319,14 +319,14 @@
                 <div class="wrapper">
                     {% for project in projects %}
                         <div class="card">
-                            <input type="checkbox" id="card1" class="more" aria-hidden="true">
+                            <label for="{{ project.id }}"></label><input type="checkbox" id="{{ project.id }}" class="more" aria-hidden="true">
                             <div class="content">
                                 <div class="front"
                                      style="background-image: url({{ project.image }})">
                                     <div class="inner">
                                         <h2>{{ project.title}}</h2>
 
-                                        <label for="card1" class="button" aria-hidden="true">
+                                        <label for="{{ project.id }}" class="button" aria-hidden="true">
                                             Details
                                         </label>
                                     </div>
@@ -342,7 +342,7 @@
                                         </div>
                                         <div class="location">Warsaw, Poland</div>
                                         <div class="price">38€ / day</div>
-                                        <label for="card1" class="button return" aria-hidden="true">
+                                        <label for="{{ project.id }}" class="button return" aria-hidden="true">
                                             <i class="fas fa-arrow-left"></i>
                                         </label>
                                     </div>
