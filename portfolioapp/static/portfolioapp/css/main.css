@@ -1538,7 +1538,7 @@ form :-ms-input-placeholder {
 
 section, article {
     margin-bottom: 3em;
-    display: block;
+    display: inline-grid;
 }
 
 section > :last-child, section:last-child, article > :last-child, article:last-child {
@@ -1895,7 +1895,6 @@ ul.actions li:first-child {
 #wrapper {
     width: 60em;
     margin: 0 auto;
-    min-height: 100vh;
     max-width: 100%;
     padding: 4em 0;
     display: -moz-flex;
@@ -1973,7 +1972,6 @@ body.is-preload #wrapper {
     transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
     display: flex;
     flex-direction: row;
-    min-height: 115vh;
     max-height: none;
 
 }
@@ -1988,7 +1986,7 @@ body.is-preload #wrapper {
     position: relative;
     padding: 3.5em 2.5em 2.5em 2.5em;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
 
 }
