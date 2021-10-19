@@ -13,7 +13,7 @@
     </noscript>
     <script>
         (function () {
-            var tab = document.querySelector('.card');
+            const tab = document.querySelector('.card');
 
             document.getElementById('{{ project.id }}').addEventListener('click', function () {
                 tab.classList.add('back');
@@ -319,12 +319,12 @@
                 <div class="wrapper">
                     {% for project in projects %}
                         <div class="card">
-                            <label for="{{ project.id }}"></label><input type="checkbox" id="{{ project.id }}" class="more" aria-hidden="true">
+                            <input type="checkbox" id="{{ project.id }}" class="more" aria-hidden="true">
                             <div class="content">
                                 <div class="front"
                                      style="background-image: url({{ project.image }})">
                                     <div class="inner">
-                                        <h2>{{ project.title}}</h2>
+                                        <h2>{{ project.title }}</h2>
 
                                         <label for="{{ project.id }}" class="button" aria-hidden="true">
                                             Details
@@ -350,6 +350,7 @@
                             </div>
                         </div>
                     {% endfor %}
+                </div>
 
             </section>
         </article>
