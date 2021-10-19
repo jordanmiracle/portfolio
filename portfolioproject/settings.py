@@ -44,9 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolioapp',
+    'blog',
+    'graphene_django',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -97,6 +101,10 @@ FIXTURES = [
 
 # DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
 
+GRAPHENE = {
+
+    "SCHEMA": "blog.schema.schema",
+}
 
 DATABASES = {
     'default': {
