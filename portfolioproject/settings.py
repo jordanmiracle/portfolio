@@ -34,6 +34,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'thejordanmiracle.com', 'thejordanmiracle.herokuapp.com']
 
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = ("http://localhost:8080",)
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -105,6 +108,9 @@ GRAPHENE = {
 
     "SCHEMA": "blog.schema.schema",
 }
+
+
+
 
 DATABASES = {
     'default': {

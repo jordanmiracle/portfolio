@@ -1,0 +1,244 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$216000$yFUUETKdrYTd$4CHYRLZcJ/DiRm0pjnJFMNdxmyF4dCNYWbimc32GB0k=",
+        "last_login": "2021-09-27T09:01:44.966Z",
+        "is_superuser": true,
+        "username": "jordanmiracle",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2021-08-21T10:30:16.461Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "1onx4tfeeebj8j4uyujsfha53dc0rfvd",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pAO4HTq0r1nIAwDUjUlKe3KeHdD0oVu_3vvv5UP-1b83tLqZ1EXBer0u3GIz7R0II-w3KuOddnWmXVX9EGbvlVJr-vh_h2U0EqvDeKZR0MOIULACMIOZJRpMM5Z4inhxEAGTKZMnC3RgMhiBK2LSX2-xUA3TA:1mU5OG:7cDZK_Bn4M1ZURokcncYMFPoR9K64jR4SPpqzbcDlgc",
+        "expire_date": "2021-10-09T10:58:44.699Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7j5rnqtzwvwzr6yxdvdvtcp29qdudw6q",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pAO4HTq0r1nIAwDUjUlKe3KeHdD0oVu_3vvv5UP-1b83tLqZ1EXBer0u3GIz7R0II-w3KuOddnWmXVX9EGbvlVJr-vh_h2U0EqvDeKZR0MOIULACMIOZJRpMM5Z4inhxEAGTKZMnC3RgMhiBK2LSX2-xUA3TA:1mScvD:7FlKkqXVNeqTCBCNVB0OCiEleHybQYhiYRXgiYJwM7Q",
+        "expire_date": "2021-10-05T10:22:43.830Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "93j1uxfw0khed7b5v5fd4krxm8t0zjbu",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSE8ZACX7vsNZGBAqgaS0q6M_65NutDtPefcFwu4rTVsIy9hJnZhkp1-t4jpkdsO6I7t1nnqbV3myHeFH3TwqVN-Xg_376DiqN_aWXJCZZTSkvE2FXB4Fj5ZkmAlAQjlS45FeS3Bx4xaEzhjlULQBgV7fwDNmzcg:1mUmW8:s-jzQjVEIgY_rQNaTV0cd-wRk04u9f9OmAtZa6IGHME",
+        "expire_date": "2021-10-11T09:01:44.977Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "d2r7gb0k1aa7tfcf2mov3iorz50dqb5w",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pAO4HTq0r1nIAwDUjUlKe3KeHdD0oVu_3vvv5UP-1b83tLqZ1EXBer0u3GIz7R0II-w3KuOddnWmXVX9EGbvlVJr-vh_h2U0EqvDeKZR0MOIULACMIOZJRpMM5Z4inhxEAGTKZMnC3RgMhiBK2LSX2-xUA3TA:1mHOGb:Wc_MqgP7EXRTWOMSe4AlNg-Sv5oRCcczgx8ktvVfSzw",
+        "expire_date": "2021-09-04T10:30:21.560Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "fsji8hvjvly2nud03c3a2xswocscpgbd",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pAO4HTq0r1nIAwDUjUlKe3KeHdD0oVu_3vvv5UP-1b83tLqZ1EXBer0u3GIz7R0II-w3KuOddnWmXVX9EGbvlVJr-vh_h2U0EqvDeKZR0MOIULACMIOZJRpMM5Z4inhxEAGTKZMnC3RgMhiBK2LSX2-xUA3TA:1mRNcR:SjVysNyyDpqLP79NcbNja-xNDkkfhXjziscC_dzn9PE",
+        "expire_date": "2021-10-01T23:50:11.937Z"
+    }
+},
+{
+    "model": "portfolioapp.project",
+    "pk": "Jumping protein",
+    "fields": {
+        "description": "Website, blog, and gallery with database for an organization in Zimbabwe that teaches sustainable farming.",
+        "url": "https://www.gcet.africa",
+        "code_url": "https://github.com/jordanmiracle/Jumpingprotein",
+        "image": "static/portfolioapp/images/best-insects-in-bowl.jpg"
+    }
+},
+{
+    "model": "portfolioapp.project",
+    "pk": "PNW Tree & Landscape",
+    "fields": {
+        "description": "Website, gallery, and database created for company in Whatcom County, WA.",
+        "url": "http://www.pnwtreescapes.com",
+        "code_url": "https://github.com/jordanmiracle/PNW",
+        "image": "static/portfolioapp/images/climber-on-line.JPG"
+    }
+},
+{
+    "model": "portfolioapp.project",
+    "pk": "Parler Datamine",
+    "fields": {
+        "description": "This is a small data mining project I performed on a data set from the social media platform Parler. This was in response to the Jan. 6th insurrection at the U.S. capitol. Much of the data, mined by the community, led to apprehensions.",
+        "url": "https://github.com/jordanmiracle/parlerdatamine",
+        "code_url": "https://github.com/jordanmiracle/parlerdatamine",
+        "image": "static/portfolioapp/images/leaked-parler-data-capitol-attack.jpg"
+    }
+},
+{
+    "model": "portfolioapp.project",
+    "pk": "Wandering Waters",
+    "fields": {
+        "description": "Website built for a venue in Whatcom County, WA.",
+        "url": "http://wanderingwaters.com",
+        "code_url": "http://github.com/wandering",
+        "image": "static/portfolioapp/images/couple-header-image.jpg"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2021-08-21T10:31:07.470Z",
+        "user": [
+            "jordanmiracle"
+        ],
+        "content_type": [
+            "portfolioapp",
+            "project"
+        ],
+        "object_id": "PNW Tree & Landscape",
+        "object_repr": "PNW Tree & Landscape",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2021-08-21T10:31:49.930Z",
+        "user": [
+            "jordanmiracle"
+        ],
+        "content_type": [
+            "portfolioapp",
+            "project"
+        ],
+        "object_id": "Jumping protein",
+        "object_repr": "Jumping protein",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2021-08-21T10:37:44.587Z",
+        "user": [
+            "jordanmiracle"
+        ],
+        "content_type": [
+            "portfolioapp",
+            "project"
+        ],
+        "object_id": "Jumping protein",
+        "object_repr": "Jumping protein",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2021-08-21T10:38:05.217Z",
+        "user": [
+            "jordanmiracle"
+        ],
+        "content_type": [
+            "portfolioapp",
+            "project"
+        ],
+        "object_id": "PNW Tree & Landscape",
+        "object_repr": "PNW Tree & Landscape",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2021-08-21T11:10:07.112Z",
+        "user": [
+            "jordanmiracle"
+        ],
+        "content_type": [
+            "portfolioapp",
+            "project"
+        ],
+        "object_id": "Jumping protein",
+        "object_repr": "Jumping protein",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2021-09-17T23:52:11.915Z",
+        "user": [
+            "jordanmiracle"
+        ],
+        "content_type": [
+            "portfolioapp",
+            "project"
+        ],
+        "object_id": "Wandering Waters",
+        "object_repr": "Wandering Waters",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2021-09-21T10:47:16.939Z",
+        "user": [
+            "jordanmiracle"
+        ],
+        "content_type": [
+            "portfolioapp",
+            "project"
+        ],
+        "object_id": "Parler Datamine",
+        "object_repr": "Parler Datamine",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2021-09-25T10:59:02.317Z",
+        "user": [
+            "jordanmiracle"
+        ],
+        "content_type": [
+            "portfolioapp",
+            "project"
+        ],
+        "object_id": "Jumping protein",
+        "object_repr": "Jumping protein",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Url\"]}}]"
+    }
+}
+]
