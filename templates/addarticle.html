@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% load crispy_forms_filters %}
+
+{% block body %}
+{% load crispy_forms_tags %}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h3>Create Post</h3>
+        <hr>
+        <form method="post" enctype="multipart/form-data">
+            {% if user.is_authenticated %}
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form|crispy }}
+            <br>
+            <button type="submit" class="btn btn-danger">Add Post</button>
+        </form>
+    </div>
+</div>
+{% endif %}
+{% endblock body %}

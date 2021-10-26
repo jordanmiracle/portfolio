@@ -31,7 +31,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="53">
+          <list size="54">
             <item index="0" class="java.lang.String" itemvalue="pyuploadcare" />
             <item index="1" class="java.lang.String" itemvalue="dj-database-url" />
             <item index="2" class="java.lang.String" itemvalue="django-heroku" />
@@ -85,6 +85,7 @@
             <item index="50" class="java.lang.String" itemvalue="Pillow" />
             <item index="51" class="java.lang.String" itemvalue="sqlparse" />
             <item index="52" class="java.lang.String" itemvalue="bootstrap4" />
+            <item index="53" class="java.lang.String" itemvalue="pkg_resources" />
           </list>
         </value>
       </option>

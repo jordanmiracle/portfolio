@@ -17,5 +17,4 @@ def project_detail(request, pk):
     return render(request, 'portfolioapp/index.html/', context)
 
 
-def frontend(request):
-    return HttpResponse(render(request, 'portfolioapp/vue_index.html'))
+
