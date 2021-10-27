@@ -21,6 +21,8 @@ import base64
 from botocore.exceptions import ClientError
 import json
 from django.core.exceptions import ImproperlyConfigured
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-imhco(wv(_uvii2@%cyf4fpak^8w=4a7yi_6=)20pp%oaykm)d'
+SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 
 with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
     secrets = json.load(secrets_file)
@@ -122,12 +124,12 @@ FIXTURES = [
 # DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -258,3 +260,11 @@ STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 PUBLIC_MEDIA_LOCATION = 'media'
 # MEDIA_URL = f'//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME  # This was changed after we got everything up and running again
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+
+
+
+
+
+if not DEBUG:
+    django_heroku.settings(locals(), staticfiles=False)
+    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
