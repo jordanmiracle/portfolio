@@ -25,7 +25,6 @@ urlpatterns = [
         path('admin/', admin.site.urls),
         path('', views.index, name='index'),
         path('<int:id>/', views.project_detail, name='project_detail'),
-        path('articles/', include("article.urls")),
         path('', include('portfolioapp.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
