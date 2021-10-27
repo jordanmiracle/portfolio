@@ -278,7 +278,7 @@
         <a href="#about" class="icon solid fa-male"><span>About</span></a>
         <a href="#projects" class="icon solid fa-folder"><span>Projects</span></a>
         <!--
-        <a href="{% url 'article:articles' %}" class="icon solid fa-envelope"><span>Blog</span></a> -->
+        <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a> -->
         <a href="https://github.com/jordanmiracle" class="icon brands fa-github"><span>Github</span></a>
     </nav>
 
@@ -358,109 +358,42 @@
         </article>
 
 
-        <!-- Contact
+        <!-- Contact -->
         <article id="contact" class="panel">
             <header>
                 <h2>I'm available to contact, work with, or hire.</h2>
             </header>
             <form action="{% url 'article:articles' %}" method="post">
 
-                <div class="row">
-
-                    <div class="col-md-10 offset-md-3">
-                        <div class="col-lg-8">
-                            <h3>Blog Posts</h3>
-                            <hr>
-                        </div>
-                    </div>
+                <div class="col-6 col-12-medium">
+                    <label>
+                        <input type="text" name="email" placeholder="Email"/>
+                    </label>
                 </div>
-                <div class="row">
-                    <div class="col-md-10 offset-md-3">
-                        <div class="col-lg-8">
-                            <form>
-                                {% csrf_token %}
-                                <input type="text" name="keyword" class="input-sm" maxlength="64" placeholder="Search">
-                                <button type="submit" class="btn btn-danger">Search</button>
-                            </form>
-                        </div>
-                    </div>
-
+                <div class="col-12">
+                    <label>
+                        <input type="text" name="subject" placeholder="Subject"/>
+                    </label>
                 </div>
-
-
-                {% if articles %}
-
-                    {% for article in articles %}
-                        <div class="row">
-                            <div class="col-md-10 offset-md-3">
-
-                                <div class="col-lg-8">
-
-                                    <a href="{% url 'article:detail' article.slug %}"><h2
-                                            class="mt-4">{{ article.title }}</h2></a>
-
-                                    <p class="lead">
-
-                                        Posted by {{ article.author.username }}
-                                    </p>
-
-                                    <hr>
-
-                                    <p>{{ article.created_date }}</p>
-                                    <hr>
-                                    {% if article.article_image %}
-                                        <a href="{% url 'article:detail' article.slug %}"><img class="img-fluid rounded"
-                                                                                               src="{{ article.article_image.url }}"
-                                                                                               alt=""></a>
-                                    {% endif %}
-
-
-                                    <hr>
-
-                                    <p class="lead">
-                                        {{ article.content|safe|truncatewords:50 }}
-                                    </p>
-
-                                    <a href="{% url 'article:detail' article.slug %}" class="btn btn-danger my-3">Read
-                                        More</a>
-                                    <hr>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    {% endfor %}
-
-
-                {% else %}
-                    <div class="row">
-
-                        <div class="col-md-10 offset-md-3">
-                            <div class="col-lg-8">
-                                <div class="alert alert-danger">
-                                    No articles yet..
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
+                <div class="col-12">
+                    <label>
+                        <textarea name="message" placeholder="Message" rows="6"></textarea>
+                    </label>
+                </div>
             </form>
-        </article>
+            <div id="footer">
+                <ul class="copyright">
+                    <li>&copy; Miracle 2021</li>
+                </ul>
+            </div>
+    </div>
 
-    </div>
-    <div id="footer">
-        <ul class="copyright">
-            <li>&copy; Miracle 2021</li>
-        </ul>
-    </div>
-</div>
--->
-<!-- Scripts -->
-<script src="{% static 'portfolioapp/js/jquery.min.js' %}"></script>
-<script src="{% static 'portfolioapp/js/browser.min.js' %}"></script>
-<script src="{% static 'portfolioapp/js/breakpoints.min.js' %}"></script>
-<script src="{% static 'portfolioapp/js/util.js' %}"></script>
-<script src="{% static 'portfolioapp/js/main.js' %}"></script>
+    <!-- Scripts -->
+    <script src="{% static 'portfolioapp/js/jquery.min.js' %}"></script>
+    <script src="{% static 'portfolioapp/js/browser.min.js' %}"></script>
+    <script src="{% static 'portfolioapp/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'portfolioapp/js/util.js' %}"></script>
+    <script src="{% static 'portfolioapp/js/main.js' %}"></script>
 </body>
 </html>
 
