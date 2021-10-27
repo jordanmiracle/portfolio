@@ -45,7 +45,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 SITE_ID = 1
@@ -172,9 +172,9 @@ USE_TZ = True
 
 # STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
+#STATICFILES_DIRS = [
+#    BASE_DIR / "static"
+#]
 
 STATICFILES = [
     BASE_DIR / 'static'
@@ -194,7 +194,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ###### AWS Settings  ######
 
 def get_secret():
-    secret_name = "jordanmiracle"
+    secret_name = "jordanmiraclebucket"
     region_name = "us-east-1"
 
     # Create a Secrets Manager client
@@ -265,7 +265,11 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 PUBLIC_MEDIA_LOCATION = 'media'
 # MEDIA_URL = f'//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME  # This was changed after we got everything up and running again
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+MEDIA_URL = AWS_S3_CUSTOM_DOMAIN + '/media/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 if not DEBUG:
     django_heroku.settings(locals(), staticfiles=False)
