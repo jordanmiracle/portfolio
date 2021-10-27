@@ -45,11 +45,9 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = False
 
 SITE_ID = 1
-
 
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
@@ -58,7 +56,6 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = 60
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
-
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'jordanmiracle.com', 'https://www.jordanmiracle.com',
                  "https://jordanmiracle.herokuapp.com/"]
@@ -79,6 +76,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -170,20 +168,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 
-#STATICFILES_DIRS = [
-#    BASE_DIR / "static"
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+#STATICFILES = [
+#    BASE_DIR / 'static'
 #]
 
-STATICFILES = [
-    BASE_DIR / 'static'
-]
 
 # MEDIA_ROOT = BASE_DIR / 'static/images'
 # MEDIA_URL = '/media/'
 
-# STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -194,7 +195,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ###### AWS Settings  ######
 
 def get_secret():
-    secret_name = "jordanmiraclebucket"
+    secret_name = "jordanmiracle"
     region_name = "us-east-1"
 
     # Create a Secrets Manager client
@@ -242,38 +243,9 @@ def get_secret():
             decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
 
 
-AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
-AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = 'jordanmiraclebucket'
-AWS_S3_FILE_OVERWRITE = False
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-
-AWS_PRELOAD_METADATA = True
-COMPRESS_OFFLINE = True
-COMPRESS_ENABLED = True
-AWS_MEDIA_LOCATION = 'media'
-AWS_PUBLIC_LOCATION = 'public'
-PRIVATE_FILE_STORAGE = 'portfolioproject.storage_backends.MediaStorage'
-AWS_S3_REGION_NAME = 'us-east-1'
-AWS_LOCATION = 'static'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-PUBLIC_MEDIA_LOCATION = 'media'
-# MEDIA_URL = f'//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME  # This was changed after we got everything up and running again
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
 
 if not DEBUG:
     django_heroku.settings(locals(), staticfiles=False)
     DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
-
 
 django_heroku.settings(locals())
