@@ -270,3 +270,6 @@ MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
 if not DEBUG:
     django_heroku.settings(locals(), staticfiles=False)
     DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
+
+
+django_heroku.settings(locals())
