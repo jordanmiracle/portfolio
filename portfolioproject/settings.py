@@ -45,7 +45,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 SITE_ID = 1
@@ -257,7 +257,7 @@ COMPRESS_ENABLED = True
 AWS_MEDIA_LOCATION = 'media'
 AWS_PUBLIC_LOCATION = 'public'
 PRIVATE_FILE_STORAGE = 'portfolioproject.storage_backends.MediaStorage'
-AWS_S3_REGION_NAME = 'us-east-2'
+AWS_S3_REGION_NAME = 'us-east-1'
 AWS_LOCATION = 'static'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
@@ -265,7 +265,7 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 PUBLIC_MEDIA_LOCATION = 'media'
 # MEDIA_URL = f'//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME  # This was changed after we got everything up and running again
-MEDIA_URL = AWS_S3_CUSTOM_DOMAIN + '/media/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),

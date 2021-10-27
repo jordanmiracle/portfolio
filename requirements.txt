@@ -32,7 +32,7 @@ django-heroku-memcacheify==1.0.0
 django-htmlmin==0.11.0
 django-js-asset==1.2.2
 django-npm==1.0.0
-django-pwa==1.0.10
+django-on-heroku==1.0.1
 django-pylibmc==0.6.1
 django-s3-folder-storage==0.5
 django-storages==1.11.1
