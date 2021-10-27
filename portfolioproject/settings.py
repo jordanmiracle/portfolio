@@ -23,7 +23,6 @@ import json
 from django.core.exceptions import ImproperlyConfigured
 import dj_database_url
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -33,11 +32,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 
-#with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+# with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
 #    secrets = json.load(secrets_file)
 #
 #
-#def get_secret(setting, secrets=secrets):
+# def get_secret(setting, secrets=secrets):
 #    """Get secret setting or fail with ImproperlyConfigured"""
 #    try:
 #        return secrets[setting]
@@ -54,7 +53,8 @@ if not DEBUG:
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_SECONDS = 60
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'jordanmiracle.com', 'https://www.jordanmiracle.com', "https://jordanmiracle.herokuapp.com/"]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'jordanmiracle.com', 'https://www.jordanmiracle.com',
+                 "https://jordanmiracle.herokuapp.com/"]
 
 # Application definition
 
@@ -123,12 +123,12 @@ FIXTURES = [
 # DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
 
 
-#DATABASES = {
+# DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
-#}
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -177,7 +177,7 @@ STATICFILES = [
 # MEDIA_ROOT = BASE_DIR / 'static/images'
 # MEDIA_URL = '/media/'
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -188,8 +188,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ###### AWS Settings  ######
 
 def get_secret():
-    secret_name = "gcet-bucket"
-    region_name = "eu-west-3"
+    secret_name = "jordanmiracle"
+    region_name = "us-east-1"
 
     # Create a Secrets Manager client
     session = boto3.session.Session()
@@ -255,15 +255,12 @@ AWS_S3_REGION_NAME = 'us-east-2'
 AWS_LOCATION = 'static'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 PUBLIC_MEDIA_LOCATION = 'media'
 # MEDIA_URL = f'//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME  # This was changed after we got everything up and running again
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
 
-
-
-
-
-if not DEBUG:
-    django_heroku.settings(locals(), staticfiles=False)
-    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
+# if not DEBUG:
+#    django_heroku.settings(locals(), staticfiles=False)
+#    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
