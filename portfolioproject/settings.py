@@ -68,7 +68,6 @@ INSTALLED_APPS = [
     'portfolioapp',
     'crispy_forms',
     'storages',
-    'boto3',
 ]
 
 MIDDLEWARE = [
@@ -261,6 +260,6 @@ PUBLIC_MEDIA_LOCATION = 'media'
 # MEDIA_URL = f'//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME  # This was changed after we got everything up and running again
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
 
-# if not DEBUG:
-#    django_heroku.settings(locals(), staticfiles=False)
-#    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
+if not DEBUG:
+    django_heroku.settings(locals(), staticfiles=False)
+    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
