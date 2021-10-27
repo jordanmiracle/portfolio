@@ -47,11 +47,18 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+
+SITE_ID = 1
+
+
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_SECONDS = 60
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'jordanmiracle.com', 'https://www.jordanmiracle.com',
                  "https://jordanmiracle.herokuapp.com/"]
