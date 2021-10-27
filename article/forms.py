@@ -1,6 +1,5 @@
 from django import forms
 from .models import Article
-from . import views
 from django.forms import Form, ChoiceField
 
 
