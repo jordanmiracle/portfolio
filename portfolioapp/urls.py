@@ -5,5 +5,4 @@ from portfolioapp import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('articles.html', include('article.urls'))
 ]
