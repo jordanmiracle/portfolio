@@ -127,7 +127,7 @@ FIXTURES = [
 #   },
 # }
 
-# DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
+#DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
 
 
 # DATABASES = {
@@ -171,14 +171,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
-STATIC_ROOT = BASE_DIR / "static"
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATIC_URL = '/static/'
+#
+#STATICFILES_DIRS = [
+#    BASE_DIR / "static"
+#]
+#STATIC_ROOT = BASE_DIR / "static"
+#
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #STATICFILES = [
 #    BASE_DIR / 'static'
@@ -246,12 +246,44 @@ def get_secret():
             decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
 
 
+### AWS S3 ###
 
-if not DEBUG:
-    django_heroku.settings(locals(), staticfiles=False)
-    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
+# Django storages configuration
 
-django_heroku.settings(locals())
+
+AWS_STORAGE_BUCKET_NAME = 'jordanmiraclebucket'
+AWS_S3_FILE_OVERWRITE = False
+#AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+ }
+AWS_MEDIA_LOCATION = 'media'
+AWS_PUBLIC_LOCATION = 'public'
+PRIVATE_FILE_STORAGE = 'portfolioproject.storage_backends.MediaStorage'
+AWS_S3_REGION_NAME = 'us-east-1'
+AWS_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+
+PUBLIC_MEDIA_LOCATION = 'media'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+
+
+
+
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+# STATICFILES_FINDERS = (
+#    'django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# )
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static'),
+# ]
+
+
 
 
 
@@ -289,3 +321,10 @@ LOGGING = {
         }
     }
 }
+
+if not DEBUG:
+   django_heroku.settings(locals(), staticfiles=False)
+   DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
+
+
+django_heroku.settings(locals(), staticfiles=False)
