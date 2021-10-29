@@ -18,6 +18,7 @@ import django_heroku
 from django.contrib import staticfiles, postgres
 import boto3
 import base64
+from storages.backends.s3boto3 import S3Boto3Storage
 from botocore.exceptions import ClientError
 import json
 from django.core.exceptions import ImproperlyConfigured
@@ -47,7 +48,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-DEBUG_PROPAGATE_EXCEPTIONS = True
+#DEBUG_PROPAGATE_EXCEPTIONS = True
 
 SITE_ID = 1
 
@@ -60,7 +61,7 @@ if not DEBUG:
     SECURE_HSTS_PRELOAD = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'jordanmiracle.com', 'https://www.jordanmiracle.com',
-                 "https://jordanmiracle.herokuapp.com/"]
+                 "https://jordanmiracle.herokuapp.com/", "*"]
 
 # Application definition
 
@@ -91,7 +92,7 @@ ROOT_URLCONF = 'portfolioproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -113,27 +114,27 @@ FIXTURES = [
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#   'default': {
-#       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#       'USER': 'jordanmiracle',
-#       'NAME': 'portfoliodb',
-#       'HOST': 'localhost',
-#       'PASSWORD': 'Likeacarrot23!',
-#       'PORT': '5432',
-#   },
-# }
+if DEBUG:
+    DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.postgresql_psycopg2',
+          'USER': 'jordanmiracle',
+          'NAME': 'portfoliodb',
+          'HOST': 'localhost',
+          'PASSWORD': 'Likeacarrot23!',
+          'PORT': '5432',
+      },
+    }
 
 # DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
 
 
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': BASE_DIR / 'db.sqlite3',
-   }
-}
+#DATABASES = {
+#   'default': {
+#       'ENGINE': 'django.db.backends.sqlite3',
+#       'NAME': BASE_DIR / 'db.sqlite3',
+#   }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -248,11 +249,9 @@ def get_secret():
 
 # Django storages configuration
 
-
-
 AWS_STORAGE_BUCKET_NAME = 'jordanmiraclebucket'
 AWS_S3_FILE_OVERWRITE = False
-#AWS_DEFAULT_ACL = None
+#AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
@@ -282,9 +281,9 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #    os.path.join(BASE_DIR, 'static'),
 # ]
 
-if not DEBUG:
-    django_heroku.settings(locals(), staticfiles=False)
-    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
+#if not DEBUG:
+#    django_heroku.settings(locals(), staticfiles=False)
+#    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
@@ -299,35 +298,35 @@ if not DEBUG:
 
 ### Logging ###
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' +
-                       'pathname=%(pathname)s lineno=%(lineno)s ' +
-                       'funcname=%(funcName)s %(message)s'),
-            'datefmt': '%Y-%m-%d %H:%M:%S'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        }
-    },
-    'handlers': {
-        'null': {
-            'level': 'DEBUG',
-            'class': 'logging.NullHandler',
-        },
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
-        }
-    },
-    'loggers': {
-        'testlogger': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        }
-    }
-}
+#LOGGING = {
+#    'version': 1,
+#    'disable_existing_loggers': False,
+#    'formatters': {
+#        'verbose': {
+#            'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' +
+#                       'pathname=%(pathname)s lineno=%(lineno)s ' +
+#                       'funcname=%(funcName)s %(message)s'),
+#            'datefmt': '%Y-%m-%d %H:%M:%S'
+#        },
+#        'simple': {
+#            'format': '%(levelname)s %(message)s'
+#        }
+#    },
+#    'handlers': {
+#        'null': {
+#            'level': 'DEBUG',
+#            'class': 'logging.NullHandler',
+#        },
+#        'console': {
+#            'level': 'DEBUG',
+#            'class': 'logging.StreamHandler',
+#            'formatter': 'verbose'
+#        }
+#    },
+#    'loggers': {
+#        'testlogger': {
+#            'handlers': ['console'],
+#            'level': 'INFO',
+#        }
+#    }
+#}
