@@ -281,9 +281,9 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #    os.path.join(BASE_DIR, 'static'),
 # ]
 
-#if not DEBUG:
-#    django_heroku.settings(locals(), staticfiles=False)
-#    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
+if not DEBUG:
+    django_heroku.settings(locals(), staticfiles=False)
+    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
