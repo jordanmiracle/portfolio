@@ -248,7 +248,8 @@ def get_secret():
 ### AWS S3 ###
 
 # Django storages configuration
-
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'jordanmiraclebucket'
 AWS_S3_FILE_OVERWRITE = False
 #AWS_DEFAULT_ACL = 'public-read'
@@ -277,9 +278,9 @@ MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
 # )
 
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, 'static'),
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+ ]
 
 if not DEBUG:
     django_heroku.settings(locals(), staticfiles=False)
