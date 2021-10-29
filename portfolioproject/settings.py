@@ -245,7 +245,7 @@ def get_secret():
             decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
 
 
-### AWS S3 ###
+### AWS S3 #####
 
 # Django storages configuration
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
