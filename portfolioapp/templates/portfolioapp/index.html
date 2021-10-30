@@ -53,7 +53,7 @@
             height: 50px;
             position: absolute;
             animation: mymove2 15s infinite;
-            margin-top: 8em;
+            margin-top: 6em;
             opacity: 50%;
 
         }
@@ -104,13 +104,20 @@
 
         }
 
-        .img {
+        .img-mountains {
             align-content: center;
             max-width: 150vw;
-            height: auto;
+            height: 40vh;
             display: block;
         }
 
+
+        .img-clouds {
+            align-content: center;
+            max-width: 150vw;
+            height: 20vh;
+            display: block;
+        }
         #venus {
             width: 10px;
             height: 10px;
@@ -263,7 +270,7 @@
     <div class="keyframes mymove2" id="nuage">
         <div>
             <i>
-                <img class=img src="{% static 'portfolioapp/images/NUAGE.png' %}" height=300px width=1200px
+                <img class=img-clouds src="{% static 'portfolioapp/images/NUAGE.png' %}" height=300px width=1200px
                      title="Clouds" alt=""/></i></div>
     </div>
     <div class="container3">
@@ -272,7 +279,7 @@
         </h5></a>
 
 
-        <img class=img src="{% static 'portfolioapp/images/tres-gradient.png' %}" height=500px
+        <img class=img-mountains src="{% static 'portfolioapp/images/tres-gradient.png' %}" height=500px
              width=2000px
              title="Clouds" alt="Mountains"/>
 
