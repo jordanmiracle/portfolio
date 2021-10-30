@@ -1588,12 +1588,15 @@ body, input, textarea, select {
     color: #777777;
     font-size: 20pt;
     line-height: 1.75em;
+    overflow-x: hidden;
 }
 
 @media screen and (max-width: 1680px) {
 
     body, input, textarea, select {
         font-size: 15pt;
+        overflow-x: hidden;
+
     }
 
 }
@@ -1602,6 +1605,8 @@ body, input, textarea, select {
 
     body, input, textarea, select {
         font-size: 14pt;
+        overflow-x: hidden;
+
     }
 
 }
@@ -1610,6 +1615,8 @@ body, input, textarea, select {
 
     body, input, textarea, select {
         font-size: 12pt;
+        overflow-x: hidden;
+
     }
 
 }
@@ -1618,13 +1625,15 @@ body, input, textarea, select {
 
     body, input, textarea, select {
         font-size: 11pt;
+        overflow-x: hidden;
+
     }
 
 }
 
 strong, b, h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
-    color: darkslategray;
+    color: darkslateblue;
 }
 
 h1 {
