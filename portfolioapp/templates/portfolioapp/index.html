@@ -49,12 +49,12 @@
         }
 
         h5 {
-            width: 30px;
-            height: 30px;
+            width: 50px;
+            height: 50px;
             position: absolute;
             animation: mymove2 15s infinite;
-            margin-top: 6em;
-            opacity: 40%;
+            margin-top: 8em;
+            opacity: 50%;
 
         }
 
@@ -79,7 +79,7 @@
 
         @keyframes mymove2 {
             from {
-                left: 0;
+                left: 200px;
             }
             to {
                 left: 1400px;
@@ -106,7 +106,7 @@
 
         .img {
             align-content: center;
-            max-width: 100vw;
+            max-width: 150vw;
             height: auto;
             display: block;
         }
@@ -129,7 +129,7 @@
     <h1>
         <img width="90" height="90"
              src="https://upload.wikimedia.org/wikipedia/commons/d/d0/International_Space_Station.svg"
-             title="ISS en live" alt=""/></h1>
+             title="ISS en live" alt=""></h1>
 
 </div>
 <div class="star">
@@ -152,13 +152,6 @@
 
     <!-- Main -->
     <div id="main">
-        <div class="keyframes mymove2" id="nuage">
-            <div>
-                <i>
-                    <img class=img src="{% static 'portfolioapp/images/NUAGE.png' %}" height=300px width=1000px
-                         title="Clouds" alt=""/></i></div>
-        </div>
-
         <!-- Me -->
         <article id="home" class="panel intro">
             <header>
@@ -258,14 +251,20 @@
                 </label>
             </div>
         </article>
-        <div id="footer">
 
+        <div id="footer">
             <ul class="copyright">
                 <li>&copy; Miracle 2021</li>
             </ul>
 
         </div>
 
+    </div>
+    <div class="keyframes mymove2" id="nuage">
+        <div>
+            <i>
+                <img class=img src="{% static 'portfolioapp/images/NUAGE.png' %}" height=300px width=1200px
+                     title="Clouds" alt=""/></i></div>
     </div>
     <div class="container3">
         <a href="https://home.tothestarsacademy.com/"><h5>
@@ -274,7 +273,7 @@
 
 
         <img class=img src="{% static 'portfolioapp/images/tres-gradient.png' %}" height=500px
-             width=auto
+             width=2000px
              title="Clouds" alt="Mountains"/>
 
     </div>
@@ -282,12 +281,12 @@
 <script id="rendered-js">
 
     (() => {
-        const max_stars = 100;
+        const max_stars = 250;
         const stars = [];
 
         for (let i = 0; i < max_stars; i++) {
             const star = document.createElement('span');
-            const size = (Math.floor(Math.random() * 3) + 1);
+            const size = (Math.floor(Math.random() * 4) + 1);
             star.className = 'star';
             star.style.width = size + 'px';
             star.style.height = size + 'px';
