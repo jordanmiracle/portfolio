@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'portfolioapp',
     'crispy_forms',
     'storages',
+    'tailwind',
 ]
 
 MIDDLEWARE = [
