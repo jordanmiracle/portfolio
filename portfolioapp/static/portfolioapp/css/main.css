@@ -2225,283 +2225,287 @@ body.is-preload #wrapper {
 
 }
 
-@media screen and (max-width: 500px) {
-        .card {
-        width: 12em;
+@media screen and (max-width: 600px) {
+    .card {
+        width: 14em;
         height: 210px;
         margin: 1em;
         perspective: 1500px;
+
     }
 }
 
-@media screen and (max-width: 360px) {
-
-    #wrapper {
-        padding: 1em 0;
-        max-width: 100%;
+    @media screen and (max-width: 500px) {
+        .card {
+            width: 13em;
+            height: 210px;
+            margin: 1em;
+            perspective: 1500px;
+        }
     }
 
-    .card {
-        width: 13em;
-        height: 10em;
-        margin: 1em;
-        perspective: 1500px;
+    @media screen and (max-width: 360px) {
+
+
+        .card {
+            width: 14em;
+            height: 10em;
+            margin: 1em;
+            perspective: 1500px;
+        }
+
     }
 
-}
+    /* Main */
+    #main {
+        position: relative;
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.25);
+        -moz-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
+        -webkit-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
+        -ms-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
+        transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
+        display: flex;
+        flex-direction: row;
+        max-height: none;
 
-/* Main */
+    }
 
-#main {
-    position: relative;
-    width: 100%;
-    background: #ffffff;
-    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.25);
-    -moz-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
-    -webkit-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
-    -ms-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
-    transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
-    display: flex;
-    flex-direction: row;
-    max-height: none;
-
-}
-
-
-#main > .panel {
-    -moz-transition: opacity 0.25s ease-in-out;
-    -webkit-transition: opacity 0.25s ease-in-out;
-    -ms-transition: opacity 0.25s ease-in-out;
-    transition: opacity 0.25s ease-in-out;
-    margin-bottom: 0;
-    position: relative;
-    padding: 3.5em 2.5em 2.5em 2.5em;
-    width: 100%;
-    height: 100%;
-
-
-}
-
-#main > .panel.inactive {
-    opacity: 0;
-}
-
-@media screen and (max-width: 736px) {
 
     #main > .panel {
-        padding: 2em 1.5em 1.5em 1.5em;
+        -moz-transition: opacity 0.25s ease-in-out;
+        -webkit-transition: opacity 0.25s ease-in-out;
+        -ms-transition: opacity 0.25s ease-in-out;
+        transition: opacity 0.25s ease-in-out;
+        margin-bottom: 0;
+        position: relative;
+        padding: 3.5em 2.5em 2.5em 2.5em;
+        width: 100%;
+        height: 100%;
+
+
     }
 
+    #main > .panel.inactive {
+        opacity: 0;
+    }
+
+    @media screen and (max-width: 736px) {
+
+        #main > .panel {
+            padding: 2em 1.5em 1.5em 1.5em;
+        }
 
 
-}
-
-#main > .panel.intro {
-    padding: 0;
-    height: 20em;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    -moz-flex-direction: row;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -moz-align-items: center;
-    -webkit-align-items: center;
-    -ms-align-items: center;
-    align-items: center;
-}
-
-#main > .panel.intro .pic {
-    text-decoration: none;
-    position: relative;
-    -moz-flex-grow: 0;
-    -webkit-flex-grow: 0;
-    -ms-flex-grow: 0;
-    flex-grow: 0;
-    -moz-flex-shrink: 0;
-    -webkit-flex-shrink: 0;
-    -ms-flex-shrink: 0;
-    flex-shrink: 0;
-    width: 17em;
-    height: 100%;
-}
-
-#main > .panel.intro .pic:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-#main > .panel.intro .pic img {
-    position: relative;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -moz-object-fit: cover;
-    -webkit-object-fit: cover;
-    -ms-object-fit: cover;
-    object-fit: cover;
-    -moz-object-position: center;
-    -webkit-object-position: center;
-    -ms-object-position: center;
-    object-position: center;
-}
-
-#main > .panel.intro .pic .arrow {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    margin-top: -1.375em;
-    width: 2.75em;
-    height: 2.75em;
-    background: #000;
-    background: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
-    text-align: center;
-    line-height: 2.75em;
-    font-size: 1.5em;
-    z-index: 1;
-    -moz-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
-    -webkit-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
-    -ms-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
-    transition: width .15s ease-in-out, padding-right .15s ease-in-out;
-}
-
-#main > .panel.intro .pic .arrow:before {
-    position: relative;
-    padding-right: 0;
-    top: 0.125em;
-}
-
-#main > .panel.intro .pic .arrow span {
-    display: block;
-    text-indent: -9999px;
-}
-
-#main > .panel.intro .pic:hover .arrow {
-    width: 3em;
-    padding-right: 0.25em;
-}
-
-#main > .panel.intro header {
-    -moz-flex-grow: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-grow: 1;
-    flex-grow: 1;
-    -moz-flex-shrink: 1;
-    -webkit-flex-shrink: 1;
-    -ms-flex-shrink: 1;
-    flex-shrink: 1;
-    padding: 3.5em 2.5em;
-    margin-bottom: 0;
-    width: 100%;
-}
-
-#main > .panel.intro header h1 {
-    line-height: 1.25em;
-    margin-bottom: 0;
-}
-
-#main > .panel.intro header p {
-    letter-spacing: -0.015em;
-    font-size: 1.25em;
-    margin: 0.25em 0 0 0;
-}
-
-@media screen and (max-width: 980px) {
+    }
 
     #main > .panel.intro {
-        -moz-flex-direction: column;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        height: auto;
+        padding: 0;
+        height: 20em;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        -moz-flex-direction: row;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -moz-align-items: center;
+        -webkit-align-items: center;
+        -ms-align-items: center;
+        align-items: center;
     }
 
     #main > .panel.intro .pic {
-        height: 25em;
+        text-decoration: none;
+        position: relative;
+        -moz-flex-grow: 0;
+        -webkit-flex-grow: 0;
+        -ms-flex-grow: 0;
+        flex-grow: 0;
+        -moz-flex-shrink: 0;
+        -webkit-flex-shrink: 0;
+        -ms-flex-shrink: 0;
+        flex-shrink: 0;
+        width: 17em;
+        height: 100%;
+    }
+
+    #main > .panel.intro .pic:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    #main > .panel.intro .pic img {
+        position: relative;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -moz-object-fit: cover;
+        -webkit-object-fit: cover;
+        -ms-object-fit: cover;
+        object-fit: cover;
+        -moz-object-position: center;
+        -webkit-object-position: center;
+        -ms-object-position: center;
+        object-position: center;
+    }
+
+    #main > .panel.intro .pic .arrow {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -1.375em;
+        width: 2.75em;
+        height: 2.75em;
+        background: #000;
+        background: rgba(0, 0, 0, 0.75);
+        color: #ffffff;
+        text-align: center;
+        line-height: 2.75em;
+        font-size: 1.5em;
+        z-index: 1;
+        -moz-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
+        -webkit-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
+        -ms-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
+        transition: width .15s ease-in-out, padding-right .15s ease-in-out;
+    }
+
+    #main > .panel.intro .pic .arrow:before {
+        position: relative;
+        padding-right: 0;
+        top: 0.125em;
+    }
+
+    #main > .panel.intro .pic .arrow span {
+        display: block;
+        text-indent: -9999px;
+    }
+
+    #main > .panel.intro .pic:hover .arrow {
+        width: 3em;
+        padding-right: 0.25em;
+    }
+
+    #main > .panel.intro header {
+        -moz-flex-grow: 1;
+        -webkit-flex-grow: 1;
+        -ms-flex-grow: 1;
+        flex-grow: 1;
+        -moz-flex-shrink: 1;
+        -webkit-flex-shrink: 1;
+        -ms-flex-shrink: 1;
+        flex-shrink: 1;
+        padding: 3.5em 2.5em;
+        margin-bottom: 0;
         width: 100%;
     }
 
-    #main > .panel.intro header {
-        padding: 4em;
-        text-align: center;
-    }
-
-}
-
-@media screen and (max-width: 736px) {
-
-    #main > .panel.intro .pic {
-        height: 20em;
-    }
-
-    #main > .panel.intro header {
-        padding: 2.75em 2em 2.5em 2em;
+    #main > .panel.intro header h1 {
+        line-height: 1.25em;
+        margin-bottom: 0;
     }
 
     #main > .panel.intro header p {
-        font-size: 1em;
+        letter-spacing: -0.015em;
+        font-size: 1.25em;
         margin: 0.25em 0 0 0;
     }
 
-}
+    @media screen and (max-width: 980px) {
 
-/* Footer */
+        #main > .panel.intro {
+            -moz-flex-direction: column;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            height: auto;
+        }
 
-#footer {
-    color: rgba(255, 255, 255, 0.45);
-    text-align: center;
-    padding: 2em 0 0 0;
-    font-size: 0.75em;
-}
+        #main > .panel.intro .pic {
+            height: 25em;
+            width: 100%;
+        }
 
-#footer a {
-    color: #ddd;
-    color: rgba(255, 255, 255, 0.65);
-    -moz-transition: color .25s ease-in-out;
-    -webkit-transition: color .25s ease-in-out;
-    -ms-transition: color .25s ease-in-out;
-    transition: color .25s ease-in-out;
-}
+        #main > .panel.intro header {
+            padding: 4em;
+            text-align: center;
+        }
 
-#footer a:hover {
-    color: white;
-}
-
-#footer .copyright {
-    list-style: none;
-    padding-left: 0;
-}
-
-#footer .copyright li {
-    display: inline-block;
-    padding-left: 1em;
-    margin-left: 1em;
-    border-left: solid 1px rgba(255, 255, 255, 0.315);
-    line-height: 1;
-}
-
-#footer .copyright li:first-child {
-    padding-left: 0;
-    margin-left: 0;
-    border-left: 0;
-}
-
-@media screen and (max-width: 736px) {
-
-    #footer .copyright li {
-        padding-left: 0.5em;
-        margin-left: 0.5em;
     }
 
+    @media screen and (max-width: 736px) {
+
+        #main > .panel.intro .pic {
+            height: 20em;
+        }
+
+        #main > .panel.intro header {
+            padding: 2.75em 2em 2.5em 2em;
+        }
+
+        #main > .panel.intro header p {
+            font-size: 1em;
+            margin: 0.25em 0 0 0;
+        }
+
+    }
+
+    /* Footer */
+    #footer {
+        color: rgba(255, 255, 255, 0.45);
+        text-align: center;
+        padding: 2em 0 0 0;
+        font-size: 0.75em;
+    }
+
+    #footer a {
+        color: #ddd;
+        color: rgba(255, 255, 255, 0.65);
+        -moz-transition: color .25s ease-in-out;
+        -webkit-transition: color .25s ease-in-out;
+        -ms-transition: color .25s ease-in-out;
+        transition: color .25s ease-in-out;
+    }
+
+    #footer a:hover {
+        color: white;
+    }
+
+    #footer .copyright {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    #footer .copyright li {
+        display: inline-block;
+        padding-left: 1em;
+        margin-left: 1em;
+        border-left: solid 1px rgba(255, 255, 255, 0.315);
+        line-height: 1;
+    }
+
+    #footer .copyright li:first-child {
+        padding-left: 0;
+        margin-left: 0;
+        border-left: 0;
+    }
+
+    @media screen and (max-width: 736px) {
+
+        #footer .copyright li {
+            padding-left: 0.5em;
+            margin-left: 0.5em;
+        }
+
+    }
 }
