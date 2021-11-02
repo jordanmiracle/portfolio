@@ -27,7 +27,6 @@ urlpatterns = [
         path('admin/', admin.site.urls),
         path('', views.index, name='index'),
         path('<int:id>/', views.project_detail, name='project_detail'),
-        path('cache/<int:id>/', cache_page(60* 15)(views.project_detail)),
         path('', include('portfolioapp.urls')),
 
 ]
