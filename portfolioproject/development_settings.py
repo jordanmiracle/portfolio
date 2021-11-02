@@ -19,6 +19,8 @@ from django.contrib import staticfiles, postgres
 import boto3
 import base64
 from botocore.exceptions import ClientError
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +34,19 @@ SECRET_KEY = 'django-insecure-imhco(wv(_uvii2@%cyf4fpak^8w=4a7yi_6=)20pp%oaykm)d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'thejordanmiracle.com', 'thejordanmiracle.herokuapp.com']
+
+if DEBUG:
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    SECURE_SSL_REDIRECT = False
+    CORS_REPLACE_HTTPS_REFERER = False
+    HOST_SCHEME = "http://"
+    SECURE_PROXY_SSL_HEADER = None
+    SECURE_HSTS_SECONDS = None
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+    SECURE_FRAME_DENY = False
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'thejordanmiracle.com', 'thejordanmiracle.herokuapp.com', '*']
 
 # Application definition
 
@@ -43,10 +57,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'portfolioapp',
     'crispy_forms',
     'storages',
-    'boto3',
 ]
 
 MIDDLEWARE = [
@@ -88,25 +102,38 @@ FIXTURES = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 #DATABASES = {
-#   'default': {
-#       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#       'USER': 'jordanmiracle',
-#       'NAME': 'portfoliodb',
-#       'HOST': 'localhost',
-#       'PASSWORD': 'Likeacarrot23!',
-#       'PORT': '5432',
-#   },
+#  'default': {
+#      'ENGINE': 'django.db.backends.postgresql',
+#      'USER': 'jordanmiracle',
+#      'NAME': 'portfoliodb',
+#      'HOST': 'localhost',
+#      'PASSWORD': 'Likeacarrot23!',
+#      'PORT': '5432',
+#  },
 #}
 
-# DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
-
+DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': '',  # Or path to database file if using sqlite3.
+        'USER': '',  # Not used with sqlite3.
+        'PASSWORD': '',  # Not used with sqlite3.
+        'HOST': '',  # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',  # Set to empty string for default. Not used with sqlite3.
     }
 }
+
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
+DATABASES['default'] = dj_database_url.config(default='sqlite://db/sqlite3.db')
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -152,8 +179,8 @@ STATICFILES = [
     BASE_DIR / 'static'
 ]
 
-#MEDIA_ROOT = BASE_DIR / 'static/images'
-#MEDIA_URL = '/media/'
+# MEDIA_ROOT = BASE_DIR / 'static/images'
+# MEDIA_URL = '/media/'
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
@@ -162,28 +189,30 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 ####### AWS Settings  ######
-#AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
-#AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-#AWS_STORAGE_BUCKET_NAME = 'jordanmiraclebucket'
-#AWS_S3_FILE_OVERWRITE = False
-#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-#AWS_S3_OBJECT_PARAMETERS = {
+# AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
+# AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+# AWS_STORAGE_BUCKET_NAME = 'jordanmiraclebucket'
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_OBJECT_PARAMETERS = {
 #    'CacheControl': 'max-age=86400',
-#}
+# }
 #
-#AWS_PRELOAD_METADATA = True
-#COMPRESS_OFFLINE = True
-#COMPRESS_ENABLED = True
-#AWS_MEDIA_LOCATION = 'media'
-#AWS_PUBLIC_LOCATION = 'public'
-#PRIVATE_FILE_STORAGE = 'portfolioproject.storage_backends.MediaStorage'
-#AWS_S3_REGION_NAME = 'us-east-2'
-#AWS_LOCATION = 'static'
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+# AWS_PRELOAD_METADATA = True
+# COMPRESS_OFFLINE = True
+# COMPRESS_ENABLED = True
+# AWS_MEDIA_LOCATION = 'media'
+# AWS_PUBLIC_LOCATION = 'public'
+# PRIVATE_FILE_STORAGE = 'portfolioproject.storage_backends.MediaStorage'
+# AWS_S3_REGION_NAME = 'us-east-2'
+# AWS_LOCATION = 'static'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 #
-#PUBLIC_MEDIA_LOCATION = 'media'
+# PUBLIC_MEDIA_LOCATION = 'media'
 ## MEDIA_URL = f'//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME  # This was changed after we got everything up and running again
-#MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+# MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+
+
+

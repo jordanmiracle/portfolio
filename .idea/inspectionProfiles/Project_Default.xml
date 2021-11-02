@@ -31,7 +31,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="54">
+          <list size="123">
             <item index="0" class="java.lang.String" itemvalue="pyuploadcare" />
             <item index="1" class="java.lang.String" itemvalue="dj-database-url" />
             <item index="2" class="java.lang.String" itemvalue="django-heroku" />
@@ -86,6 +86,75 @@
             <item index="51" class="java.lang.String" itemvalue="sqlparse" />
             <item index="52" class="java.lang.String" itemvalue="bootstrap4" />
             <item index="53" class="java.lang.String" itemvalue="pkg_resources" />
+            <item index="54" class="java.lang.String" itemvalue="python-binary-memcached" />
+            <item index="55" class="java.lang.String" itemvalue="graphql-relay" />
+            <item index="56" class="java.lang.String" itemvalue="angular-django" />
+            <item index="57" class="java.lang.String" itemvalue="html5lib" />
+            <item index="58" class="java.lang.String" itemvalue="arrow" />
+            <item index="59" class="java.lang.String" itemvalue="Brotli" />
+            <item index="60" class="java.lang.String" itemvalue="python-dotenv" />
+            <item index="61" class="java.lang.String" itemvalue="promise" />
+            <item index="62" class="java.lang.String" itemvalue="MarkupSafe" />
+            <item index="63" class="java.lang.String" itemvalue="pycparser" />
+            <item index="64" class="java.lang.String" itemvalue="python-slugify" />
+            <item index="65" class="java.lang.String" itemvalue="django-tailwind" />
+            <item index="66" class="java.lang.String" itemvalue="environ" />
+            <item index="67" class="java.lang.String" itemvalue="graphene-django" />
+            <item index="68" class="java.lang.String" itemvalue="cookiecutter" />
+            <item index="69" class="java.lang.String" itemvalue="binaryornot" />
+            <item index="70" class="java.lang.String" itemvalue="uhashring" />
+            <item index="71" class="java.lang.String" itemvalue="django-toolbelt" />
+            <item index="72" class="java.lang.String" itemvalue="django-heroku-memcacheify" />
+            <item index="73" class="java.lang.String" itemvalue="django-pylibmc" />
+            <item index="74" class="java.lang.String" itemvalue="databases" />
+            <item index="75" class="java.lang.String" itemvalue="cache" />
+            <item index="76" class="java.lang.String" itemvalue="djongo" />
+            <item index="77" class="java.lang.String" itemvalue="djangorestframework-jwt" />
+            <item index="78" class="java.lang.String" itemvalue="pylibmc" />
+            <item index="79" class="java.lang.String" itemvalue="aniso8601" />
+            <item index="80" class="java.lang.String" itemvalue="csscompressor" />
+            <item index="81" class="java.lang.String" itemvalue="django-htmlmin" />
+            <item index="82" class="java.lang.String" itemvalue="graphql-core" />
+            <item index="83" class="java.lang.String" itemvalue="cryptography" />
+            <item index="84" class="java.lang.String" itemvalue="dj-static" />
+            <item index="85" class="java.lang.String" itemvalue="click" />
+            <item index="86" class="java.lang.String" itemvalue="jinja2-time" />
+            <item index="87" class="java.lang.String" itemvalue="PyMySQL" />
+            <item index="88" class="java.lang.String" itemvalue="django-s3-folder-storage" />
+            <item index="89" class="java.lang.String" itemvalue="PyJWT" />
+            <item index="90" class="java.lang.String" itemvalue="rsa" />
+            <item index="91" class="java.lang.String" itemvalue="django-npm" />
+            <item index="92" class="java.lang.String" itemvalue="SQLAlchemy" />
+            <item index="93" class="java.lang.String" itemvalue="cffi" />
+            <item index="94" class="java.lang.String" itemvalue="pycodestyle" />
+            <item index="95" class="java.lang.String" itemvalue="sorl-thumbnail" />
+            <item index="96" class="java.lang.String" itemvalue="pyasn1" />
+            <item index="97" class="java.lang.String" itemvalue="Jinja2" />
+            <item index="98" class="java.lang.String" itemvalue="cloudinary" />
+            <item index="99" class="java.lang.String" itemvalue="graphene" />
+            <item index="100" class="java.lang.String" itemvalue="django-compression-middleware" />
+            <item index="101" class="java.lang.String" itemvalue="django-cors-headers" />
+            <item index="102" class="java.lang.String" itemvalue="python-jose" />
+            <item index="103" class="java.lang.String" itemvalue="django-webpack-loader" />
+            <item index="104" class="java.lang.String" itemvalue="autopep8" />
+            <item index="105" class="java.lang.String" itemvalue="poyo" />
+            <item index="106" class="java.lang.String" itemvalue="pymongo" />
+            <item index="107" class="java.lang.String" itemvalue="django-cleanup" />
+            <item index="108" class="java.lang.String" itemvalue="Rx" />
+            <item index="109" class="java.lang.String" itemvalue="ecdsa" />
+            <item index="110" class="java.lang.String" itemvalue="zstandard" />
+            <item index="111" class="java.lang.String" itemvalue="static3" />
+            <item index="112" class="java.lang.String" itemvalue="singledispatch" />
+            <item index="113" class="java.lang.String" itemvalue="django-bmemcached" />
+            <item index="114" class="java.lang.String" itemvalue="django-on-heroku" />
+            <item index="115" class="java.lang.String" itemvalue="webencodings" />
+            <item index="116" class="java.lang.String" itemvalue="jmespath" />
+            <item index="117" class="java.lang.String" itemvalue="boto3" />
+            <item index="118" class="java.lang.String" itemvalue="s3transfer" />
+            <item index="119" class="java.lang.String" itemvalue="six" />
+            <item index="120" class="java.lang.String" itemvalue="botocore" />
+            <item index="121" class="java.lang.String" itemvalue="python-dateutil" />
+            <item index="122" class="java.lang.String" itemvalue="django-storages" />
           </list>
         </value>
       </option>

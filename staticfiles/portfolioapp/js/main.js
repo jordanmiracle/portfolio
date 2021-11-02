@@ -205,3 +205,18 @@
 
 })(jQuery);
 
+(function () {
+    const tab = document.querySelector('.card');
+
+    document.getElementById('{{ project.id }}').addEventListener('click', function () {
+        tab.classList.add('back');
+    }, false);
+
+    document.getElementById('{{ project.id }}').addEventListener('click', function () {
+        tab.classList.remove('front');
+    }, false);
+
+})();
+
+
+
