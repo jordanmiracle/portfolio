@@ -20,11 +20,14 @@ from django.shortcuts import render
 from portfolioapp import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.decorators.cache import cache_page
+
 
 urlpatterns = [
         path('admin/', admin.site.urls),
         path('', views.index, name='index'),
         path('<int:id>/', views.project_detail, name='project_detail'),
+        path('/cache/<int:id>/', cache_page(60* 15)(views.project_detail)),
         path('', include('portfolioapp.urls')),
 
 ]
