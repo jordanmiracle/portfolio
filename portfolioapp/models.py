@@ -1,5 +1,5 @@
 from django.db import models
-#from portfolioproject.storage_backends import MediaStorage, PublicMediaStorage
+from portfolioproject.storage_backends import MediaStorage, PublicMediaStorage
 
 
 class Project(models.Model):
@@ -8,7 +8,7 @@ class Project(models.Model):
     url = models.URLField(blank=True)
     code_url = models.URLField(blank=True)
     #image = models.ImageField(null=False, blank=False, storage=MediaStorage, upload_to='')
-    image = models.ImageField(null=False, blank=False, upload_to='')
+    image = models.ImageField(null=False, blank=False, storage=MediaStorage, upload_to='')
 
     def __str__(self):
         return self.title
