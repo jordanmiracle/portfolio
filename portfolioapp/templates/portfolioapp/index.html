@@ -13,11 +13,11 @@
     <meta property="og:image" content="{% static 'portfolioapp/images/jmlogo.png' %}"/>
     <meta property="og:url" content="https://jordanmiracle.com"/>
     <meta property="og:type" content="website"/>
-    <meta name="twitter:card" content="summary_large_image"/>
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'portfolioapp/images/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'portfolioapp/images/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'portfolioapp/images/favicon-16x16.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'portfolioapp/images/favicon.ico' %}">
+    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
     <link rel="icon" type="image/png" sizes="16x16"
           href="{% static 'portfolioapp/images/android-chrome-192x192.png' %}">
     <link rel="icon" type="image/png" sizes="16x16"
@@ -27,15 +27,17 @@
 
 
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="{% static 'portfolioapp/css/main.css' %}"/>
+    <link rel="stylesheet" href="{% static 'portfolioapp/css/main.css' %}" media="print" onload="this.media='all'">
+
     <link rel="stylesheet" href="{% static 'portfolioapp/css/fontawesome-all.min.css' %}">
     <noscript>
         <link rel="stylesheet" href="{% static 'portfolioapp/css/noscript.css' %}"/>
     </noscript>
+    <Script>
+        let images = document.querySelectorAll(".background-image");
+        lazyload(images);
+    </Script>
 
-    <script>
-
-    </script>
     <style>
         .front:after {
             position: absolute;
@@ -324,6 +326,30 @@
         duration: 1500,
         iterations: Infinity
     });
+    (() => {
+        const max_stars = 250;
+        const stars = [];
+
+        for (let i = 0; i < max_stars; i++) {
+            const star = document.createElement('span');
+            const size = (Math.floor(Math.random() * 4) + 1);
+            star.className = 'star';
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.background = `rgba(255, 255, 177, ${Math.random()})`;
+            star.style.top = Math.ceil(Math.random() * 100) + '%';
+            star.style.left = Math.ceil(Math.random() * 100) + '%';
+            stars.push(star);
+            document.body.appendChild(star);
+        }
+
+        for (let j = 0; j < max_stars * 0.6; j++) {
+            const star = stars[j];
+            star.style.animationName = 'glow';
+            star.style.animationDelay = (Math.floor(Math.random() * 6) + 1) + 's';
+            star.style.animationDuration = (Math.floor(Math.random() * 6) + 1) + 's';
+        }
+    })();
 </script>
 <!-- Scripts -->
 <script src="{% static 'portfolioapp/js/jquery.min.js' %}"></script>
