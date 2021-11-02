@@ -28,7 +28,7 @@
 
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></script>-->
     <link rel="manifest" href="{% static 'portfolioapp/site.webmanifest' %}">
-    <link rel="stylesheet" href="{% static 'portfolioapp/css/main.css' %}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{% static 'portfolioapp/css/main.css' %}">
 
     <noscript>
         <link rel="stylesheet" href="{% static 'portfolioapp/css/noscript.css' %}"/>
@@ -179,7 +179,7 @@
                 <p>I can't think of anything catchy right now.</p>
             </header>
             <a href="#projects" class="jumplink pic">
-                <span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+                <span class="arrow icon solid fa-chevron-right"></span>
                 <img srcset="{% static 'portfolioapp/images/me-and-kai(smudged).webp' %} 317w, {% static 'portfolioapp/images/me-and-kai(smudged).webp' %} 736w"
                      sizes="(max-width: 600px) 317, 736"
                      src="{% static 'portfolioapp/images/me-and-kai(smudged).webp' %}"
