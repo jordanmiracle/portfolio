@@ -10,6 +10,7 @@ def index(request):
     projects = Project.objects.all()
     return render(request, 'portfolioapp/index.html', {'projects': projects})
 
+
 @cache_page(60 * 15)
 def project_detail(request, pk):
     project = Project.objects.get(id=pk)
