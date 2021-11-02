@@ -25,11 +25,10 @@
     <link rel="icon" type="image/png" sizes="16x16"
           href="{% static 'portfolioapp/images/apple-touch-icon.png' %}">
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></script>
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="{% static 'portfolioapp/css/main.css' %}" media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="{% static 'portfolioapp/css/fontawesome-all.min.css' %}">
     <noscript>
         <link rel="stylesheet" href="{% static 'portfolioapp/css/noscript.css' %}"/>
     </noscript>
@@ -179,7 +178,7 @@
             </header>
             <a href="#projects" class="jumplink pic">
                 <span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-                <img src="{% static 'portfolioapp/images/me-and-kai(smudged).webp' %}" height=373px width=317px
+                <img srcset="{% static 'portfolioapp/images/me-and-kai(smudged).webp' %} 317w, {% static 'portfolioapp/images/me-and-kai(smudged).webp' %} 736w" sizes="(max-width: 600px) 317, 736" src="{% static 'portfolioapp/images/me-and-kai(smudged).webp' %}"
                      alt="An image of Jordan and his feline son, Kaiju.">
             </a>
 
