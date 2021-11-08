@@ -38,6 +38,7 @@
         lazyload(images);
     </Script>
 
+
     <style>
         .front:after {
             position: absolute;
@@ -229,10 +230,11 @@
                 build things I like.
             </p>
             <section>
+
                 <div class="wrapper">
                     {% for project in projects %}
                         <div class="card">
-                            <input type="checkbox" id="{{ project.id }}" aria-hidden="true">
+                            <input type="checkbox" id="{{ project.id }}" class="more" aria-hidden="true">
                             <div class="content">
                                 <div class="front"
                                      style="background-image: url({{ project.image.url }})">
@@ -354,6 +356,7 @@
         }
     })();
 </script>
+
 <!-- Scripts -->
 <script src="{% static 'portfolioapp/js/jquery.min.js' %}"></script>
 <script src="{% static 'portfolioapp/js/browser.min.js' %}"></script>
