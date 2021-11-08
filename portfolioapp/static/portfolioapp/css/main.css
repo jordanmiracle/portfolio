@@ -1375,7 +1375,6 @@ input, select, textarea {
     display: block;
     border-radius: 6px;
     backface-visibility: hidden;
-    background-image: url("{{ project.image }}");
 }
 
 .front:hover {
