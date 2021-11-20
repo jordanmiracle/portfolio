@@ -1578,7 +1578,7 @@ body {
 }
 
 body::after {
-    background-image: url("../images/tres-gradient.png");
+    background-image: url("../images/tree-gradient-alt.webp");
 }
 
 body::before {
