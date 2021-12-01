@@ -39,7 +39,6 @@
     </Script>
     <script>$('.front').lazyload(options)</script>
 
-
     <style>
         .front:after {
             position: absolute;
@@ -83,8 +82,6 @@
         /*----------nuage------------------------------------------------------*/
         i {
             opacity: 40%;
-            width: 1500px;
-            height: 700px;
             position: absolute;
             animation: mymove 80s infinite;
 
@@ -105,7 +102,7 @@
             height: 1px;
             border-radius: 50%;
             animation-iteration-count: infinite;
-            z-index: -1;
+            z-index: 0;
         }
 
         .container3 {
@@ -121,7 +118,7 @@
         .img-mountains {
             align-content: center;
             max-width: 150vw;
-            height: 40vh;
+            height: 60vh;
             display: block;
         }
 
@@ -321,9 +318,6 @@
     </div>
 </div>
 <script id="rendered-js">
-
-</script>
-<script>
     document.querySelector("h5").animate([
         {transform: 'translateY(10px)'},
         {transform: 'translateX(50px)'},
@@ -333,12 +327,12 @@
         iterations: Infinity
     });
     (() => {
-        const max_stars = 250;
+        const max_stars = 100;
         const stars = [];
 
         for (let i = 0; i < max_stars; i++) {
             const star = document.createElement('span');
-            const size = (Math.floor(Math.random() * 4) + 1);
+            const size = (Math.floor(Math.random() * 3) + 1);
             star.className = 'star';
             star.style.width = size + 'px';
             star.style.height = size + 'px';
