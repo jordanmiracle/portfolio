@@ -140,6 +140,72 @@
             box-shadow: 2px 2px 10px;
         }
 
+        #contact a {
+            padding: 7px;
+            color: black;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        /*------------------------------------------------------------------
+                                      SECTION STYLES
+        -------------------------------------------------------------------*/
+
+        #contact {
+            margin: 50px 0;
+        }
+
+        #contact
+        #contact ul {
+            text-align: center;
+        }
+
+        #contact a {
+            padding: 7px;
+            color: black;
+        }
+
+        #contact a:not(:first-child) {
+            margin-left: 20px;
+        }
+
+        #contact i {
+            vertical-align: middle;
+            transition: color .3s ease-in-out;
+        }
+
+        #contact a:nth-child(1):hover i {
+            color: #3B5998;
+        }
+
+        #contact a:nth-child(2):hover i {
+            color: #4099FF;
+        }
+
+        #contact a:nth-child(3):hover i {
+            color: #007bb6;
+        }
+
+        #contact a:nth-child(4):hover i {
+            color: #ccc;
+        }
+
+        #contact a:nth-child(5):hover i {
+            color: steelblue;
+        }
+
+        .p {
+            text-align: center;
+            margin-top: 120px;
+        }
     </style>
 
 </head>
@@ -274,12 +340,24 @@
                 <h2>I'm available to contact, work with, or hire.</h2>
             </header>
             <div class="col-6 col-12-medium">
-                <a href="mailto: jordanmiracle@protonmail.com" class="icon brands fa-envelope"><span>Email</span></a><br>
-                <a href="https://twitter.com/jordanmiracle1" class="icon brands fa-twitter"><span>Twitter</span></a><br>
-                <a href="https://www.linkedin.com/in/jordan-m-605b4b1a9/"
-                   class="icon brands fa-linkedin"><span>LinkedIn</span></a><br>
-                <a href="https://github.com/jordanmiracle" class="icon brands fa-github"><span>Github</span></a><br>
+                <ul class="list-inline">
+                    <a href="mailto:jordanmiracle@protonmail.com" title="Email me!!">
+                        <span class="fas fa-envelope fa-2x"></span>
+                    </a>
 
+                    <a href="https://twitter.com/jordanmiracle1" title="Tweet!">
+                        <span class="fab fa-twitter fa-2x"></span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jordan-m-605b4b1a9/" title="Connect, hire, team up!">
+                        <span class="fab fa-linkedin fa-2x"></span>
+                    </a>
+                    <a href="https://github.com/jordanmiracle" title="Code!">
+                        <span class="fab fa-github-square fa-2x"></span>
+                    </a>
+                    <a href="https://stackoverflow.com/users/13274126/jordan-miracle" title="Ask a question!">
+                        <span class="fab fa-stack-overflow fa-2x"></span>
+                    </a>
+                </ul>
             </div>
         </article>
         <!--
@@ -287,7 +365,7 @@
                     <ul class="copyright">
                         <li>&copy; Miracle 2021</li>
                     </ul>
-
+        u
                 </div> -->
 
     </div>
