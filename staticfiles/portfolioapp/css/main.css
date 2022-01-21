@@ -2340,7 +2340,9 @@ body.is-preload #wrapper {
     -webkit-align-items: center;
     -ms-align-items: center;
     align-items: center;
+    z-index: 2;
 }
+
 
 #main > .panel.intro .pic {
     text-decoration: none;
