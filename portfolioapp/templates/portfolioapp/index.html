@@ -245,12 +245,13 @@
             </header>
             <a href="#projects" class="jumplink pic">
                 <span class="arrow icon solid fa-chevron-right"></span>
-                <img srcset="{% static 'portfolioapp/images/me-and-kai(smudged).webp' %} 317w, {% static 'portfolioapp/images/me-and-kai(smudged).webp' %} 736w"
-                     sizes="(max-width: 600px)"
-                     src="{% static 'portfolioapp/images/me-and-kai(smudged).webp' %}"
-                     alt="Jordan and his feline son, Kaiju.">
+                <picture>
+                    <img srcset="{% static 'portfolioapp/images/me-and-kai(smudged).webp' %}/> {% static 'portfolioapp/images/me-and-kai(smudged).webp' %}"
+                         sizes="(max-width: 600)"
+                         src="{% static 'portfolioapp/images/me-and-kai(smudged).webp' %}"
+                         alt="Jordan with Kaiju sitting on his lap.">
+                </picture>
             </a>
-
         </article>
 
         <!-- About -->
@@ -275,10 +276,10 @@
                     Currently, I am working as a freelance developer. Anything involving web development I can pick up
                     pretty quickly, but I also love language processing and data science. Some of my preferred
                     technologies are Python, Django, SCSS, and Javascript for web development, however I am starting to
-                    venture into Vue.js and Node as well to broaden what I can do. I love data science libraries such as
+                    venture into React.js and Node as well to broaden what I can do. I love data science libraries such as
                     pandas and Numpy. I truly enjoy it all. </p>
 
-                    <p>If you are interested in working together on a project, or need to hire somebody, feel free to
+                <p>If you are interested in working together on a project, or need to hire somebody, feel free to
                     contact me. I’m always willing to listen to ideas.</p>
 
             </header>
@@ -323,8 +324,7 @@
 
                                         </div>
                                         <div class="location">{{ project.title }}</div>
-                                        <label for="{{ project.id }}" class="cardbutton return" aria-hidden="true">
-                                            <div class="fas fa-arrow-left"></div>
+                                            <label for="{{ project.id }}" class="cardbutton return" aria-hidden="true">
                                         </label>
                                     </div>
                                 </div>
@@ -378,8 +378,8 @@
     <div class="keyframes mymove2" id="nuage">
         <div>
             <i>
-                <img class=img-clouds src="{% static 'portfolioapp/images/NUAGE.webp' %}" height=300px width=1200px
-                     title="Clouds" alt=""/></i></div>
+                <img class=img-clouds src="{% static 'portfolioapp/images/NUAGE.webp' %}" height=300 width=1200
+                     title="Clouds" alt="Clouds"/></i></div>
     </div>
     <div class="container3">
         <a href="https://home.tothestarsacademy.com/"><h5>
@@ -387,8 +387,8 @@
         </h5></a>
 
 
-        <img class=img-mountains src="{% static 'portfolioapp/images/tree-gradient-alt.webp' %}" height=865px
-             width=1920px
+        <img class=img-mountains src="{% static 'portfolioapp/images/tree-gradient-alt.webp' %}" height=865
+             width=1920
              title="Clouds" alt="Mountains"/>
 
     </div>
