@@ -206,6 +206,15 @@
             text-align: center;
             margin-top: 120px;
         }
+
+        .code-link {
+            display: inline;
+            word-wrap: break-word;
+            justify-content: space-between;
+            margin: 0 10px 0 10px;
+            font-size: .5em;
+
+        }
     </style>
 
 </head>
@@ -276,7 +285,8 @@
                     Currently, I am working as a freelance developer. Anything involving web development I can pick up
                     pretty quickly, but I also love language processing and data science. Some of my preferred
                     technologies are Python, Django, SCSS, and Javascript for web development, however I am starting to
-                    venture into React.js and Node as well to broaden what I can do. I love data science libraries such as
+                    venture into React.js and Node as well to broaden what I can do. I love data science libraries such
+                    as
                     pandas and Numpy. I truly enjoy it all. </p>
 
                 <p>If you are interested in working together on a project, or need to hire somebody, feel free to
@@ -315,6 +325,8 @@
                                     </div>
                                 </div>
                                 <div class="back">
+                                    <li class="code-link"><a href="{{ project.id.url }}">Live Project</a></li>
+                                    <li class="code-link"><a href="{{ project.code_url }}">Code</a></li>
                                     <div class="inner">
                                         <div class="info">
 
@@ -322,9 +334,11 @@
                                         <div class="description">
                                             <p>{{ project.description }}</p>
 
+
                                         </div>
                                         <div class="location">{{ project.title }}</div>
-                                            <label for="{{ project.id }}" class="cardbutton return" aria-hidden="true">
+                                        <div class="project title"></div>
+                                        <label for="{{ project.id }}" class="cardbutton return" aria-hidden="true">
                                         </label>
                                     </div>
                                 </div>
