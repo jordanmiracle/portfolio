@@ -7,3 +7,4 @@ User-Agent: Bingbot
 Allow: /
 
 
+Sitemap: https://jordanmiracle.com/sitemap.xml
