@@ -32,7 +32,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'portfolioapp/images/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'portfolioapp/images/favicon-16x16.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'portfolioapp/images/favicon.ico' %}">
-    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
     <link rel="icon" type="image/png" sizes="16x16"
           href="{% static 'portfolioapp/images/android-chrome-192x192.png' %}">
     <link rel="icon" type="image/png" sizes="16x16"
@@ -68,7 +67,7 @@
             background-size: 100% auto;
         }
 
-        h1 {
+        .iss {
             width: 90px;
             height: 90px;
             position: absolute;
@@ -242,10 +241,10 @@
 <!-- End Google Tag Manager (noscript) -->
 <div>
 
-    <h1>
+    <div class="iss">
         <a href="https://eol.jsc.nasa.gov/ESRS/HDEV/"><img width="90" height="90"
                                                            src="https://upload.wikimedia.org/wikipedia/commons/d/d0/International_Space_Station.svg"
-                                                           title="ISS en live" alt=""></a></h1>
+                                                           title="ISS en live" alt=""></a></div>
 
 </div>
 <div class="star">
@@ -270,7 +269,7 @@
         <!-- Me -->
         <article id="home" class="panel intro">
             <header>
-                <h2>Jordan Miracle</h2>
+                <h1>Jordan Miracle</h1>
                 <p>Software & Web Developer</p>
             </header>
             <a href="#projects" class="jumplink pic">
@@ -288,7 +287,7 @@
 
         <article id="about" class="panel">
             <header>
-                <h4>Some things about me</h4>
+                <h2>Some things about me</h2>
                 <p>
                     I’m a web and software developer with a love for projects that make meaningful differences. Many
                     developers fall into a few categories. Some see the advantage in having a skill that can earn them a
@@ -319,7 +318,7 @@
         <!-- Work -->
         <article id="projects" class="panel">
             <header>
-                <h2>Projects</h2>
+                <h3>Projects</h3>
             </header>
             <p>
                 These are projects that are either completed or, for some larger scale projects, are currently being
@@ -371,7 +370,7 @@
         <!-- Contact -->
         <article id="contact" class="panel">
             <header>
-                <h2>I'm available to contact, work with, or hire.</h2>
+                <h4>I'm available to contact, work with, or hire.</h4>
             </header>
             <div class="col-6 col-12-medium">
                 <ul class="list-inline">
@@ -465,6 +464,8 @@
 <script src="{% static 'portfolioapp/js/breakpoints.min.js' %}"></script>
 <script src="{% static 'portfolioapp/js/util.js' %}"></script>
 <script src="{% static 'portfolioapp/js/main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+
 </body>
 </html>
 
