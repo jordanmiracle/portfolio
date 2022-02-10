@@ -1,0 +1,9 @@
+# Group 1 - Google
+User-Agent: Googlebot
+Allow: /
+
+Group 2 - Bing
+User-Agent: Bingbot
+Allow: /
+
+
