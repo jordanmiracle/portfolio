@@ -13,7 +13,7 @@ class ProjectSitemap(Sitemap):
         return Project.objects.all()
 
     def location(self, items):
-        return items.url
+        return Project.url
 
 
 class StaticSitemap(Sitemap):
