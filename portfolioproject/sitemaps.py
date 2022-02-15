@@ -12,9 +12,6 @@ class ProjectSitemap(Sitemap):
     def items(self):
         return Project.objects.all()
 
-    def location(self, items):
-        return Project.url
-
 
 class StaticSitemap(Sitemap):
     changefreq = "yearly"
