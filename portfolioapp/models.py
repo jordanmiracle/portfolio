@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 
-# from portfolioproject.storage_backends import MediaStorage, PublicMediaStorage
+from portfolioproject.storage_backends import MediaStorage, PublicMediaStorage
 
 
 class Project(models.Model):
