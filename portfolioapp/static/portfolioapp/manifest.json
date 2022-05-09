@@ -1,0 +1,9 @@
+{
+  "name": "Jordan Miracle's Portfolio Website",
+  "short_name": "Portfolio",
+  "theme_color": "#0c4b7d",
+  "background_color": "#1b2b38",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/"
+}
